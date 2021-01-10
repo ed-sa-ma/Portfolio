@@ -5,7 +5,7 @@
   "main": "-",
   "scripts": {
     "scss": "sass --no-source-map src/sass/main.scss assets/css/main.css",
-    "watch": "npm run build && chokidar \"src/sass/**/*.scss\" -c \"npm run build\""
+    "watch": "npm run scss && chokidar \"src/sass/**/*.scss\" -c \"npm run scss\""
   },
   "repository": {
     "type": "git",
