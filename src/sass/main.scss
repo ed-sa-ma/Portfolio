@@ -683,6 +683,37 @@ ul.social {
         width: 48px;
       }
 
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.1);
+      }
+
+      &.leetcode-icon:before,
+      &.codewars-icon:before {
+        content: "";
+      }
+
+      &.leetcode-icon:after {
+        background-image: url("images/leetcode_icon.svg");
+      }
+
+      &.codewars-icon:after {
+        background-image: url("images/codewars_icon.svg");
+      }
+
+      &.codewars-icon {
+        background-color: #bb432c;
+      }
+
+      &.leetcode-icon {
+        background-color: #f9a825;
+      }
+
       &.fa-twitter {
         background-color: #2daae4;
       }
