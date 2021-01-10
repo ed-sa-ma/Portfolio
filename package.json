@@ -1,0 +1,24 @@
+{
+  "name": "ed-sa-ma_portfolio",
+  "version": "1.0.0",
+  "description": "Personal web for professional promotion",
+  "main": "-",
+  "scripts": {
+    "scss": "sass --no-source-map src/sass/main.scss assets/css/main.css",
+    "watch": "npm run build && chokidar \"src/sass/**/*.scss\" -c \"npm run build\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ed-sa-ma/Portfolio.git"
+  },
+  "author": "ed-sa-ma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ed-sa-ma/Portfolio/issues"
+  },
+  "homepage": "https://github.com/ed-sa-ma/Portfolio#readme",
+  "devDependencies": {
+    "chokidar-cli": "^2.1.0",
+    "sass": "^1.32.2"
+  }
+}
