@@ -1,0 +1,6 @@
+.DS_Store
+
+# Default test images used in the original template from [html-up]()
+/images/pic*
+
+assets/css/main.css
