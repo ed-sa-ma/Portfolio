@@ -3,4 +3,11 @@
 # Default test images used in the original template from [html-up]()
 /images/pic*
 
+# Generated css
 assets/css/main.css
+
+# Dependencies directory
+node_modules/
+
+# Logs for yarn
+yarn-error.log
