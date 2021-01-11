@@ -2,7 +2,7 @@
 /// @param {string} $content Optional content value to use.
 /// @param {string} $category Optional category to use.
 /// @param {string} $where Optional pseudoelement to target (before or after).
-@mixin icon($content: false, $category: regular, $where: before) {
+@mixin icon($content: false, $category: solid, $where: before) {
   text-decoration: none;
 
   &:#{$where} {
@@ -21,12 +21,9 @@
 
     @if ($category == brands) {
       font-family: "Font Awesome 5 Brands";
-    } @else if ($category == solid) {
-      font-family: "Font Awesome 5 Free";
-      font-weight: 900;
     } @else {
       font-family: "Font Awesome 5 Free";
-      font-weight: 400;
+      font-weight: 900;
     }
   }
 }
