@@ -801,6 +801,7 @@ ul.actions {
 
   &:before {
     font-size: 1.25em;
+    font-family: inherit;
   }
 
   > .label {
@@ -810,12 +811,6 @@ ul.actions {
   &.solid {
     &:before {
       font-weight: 900;
-    }
-  }
-
-  &.brands {
-    &:before {
-      font-family: "Font Awesome 5 Brands";
     }
   }
 
