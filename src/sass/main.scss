@@ -36,6 +36,15 @@
   )
 );
 
+.wf-loading * {
+  opacity: 0;
+}
+
+.wf-active *,
+.wf-inactive * {
+  @include vendor("transition", "opacity 1s ease-out");
+}
+
 // Reset.
 // Based on meyerweb.com/eric/tools/css/reset (v2.0 | 20110126 | License: public domain)
 
@@ -221,7 +230,7 @@ body,
 input,
 textarea,
 select {
-  font-family: "Lato", "Open Sans", sans-serif;
+  font-family: "Montserrat", "Open Sans", sans-serif;
   line-height: 1.85em;
   color: #888;
   font-weight: 300;
