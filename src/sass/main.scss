@@ -654,6 +654,7 @@ ul.social {
     margin: 0.25em;
     top: 0;
     padding-left: 0;
+    vertical-align: bottom;
 
     a {
       @include vendor("transition", "top .2s ease-in-out");
@@ -937,6 +938,11 @@ ul.actions {
         border-top: solid 0.6em #282828;
       }
     }
+  }
+
+  .container {
+    white-space: nowrap;
+    overflow-x: auto;
   }
 }
 
