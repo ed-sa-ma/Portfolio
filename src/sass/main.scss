@@ -214,16 +214,6 @@ html {
 
 body {
   padding-top: 3.5em;
-
-  // Stops initial animations until page loads.
-  &.is-preload {
-    *,
-    *:before,
-    *:after {
-      @include vendor("animation", "none !important");
-      @include vendor("transition", "none !important");
-    }
-  }
 }
 
 body,
