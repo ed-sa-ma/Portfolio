@@ -24,6 +24,8 @@ $main-red: #e76969;
 $main-black: #282828;
 $focus-black: #252525;
 
+$white: #ffffff;
+
 // Breakpoints.
 
 @include breakpoints(
@@ -461,7 +463,7 @@ form {
     font-size: 1em;
     border-radius: 8px;
     border: solid 1px #ddd;
-    background: #fff;
+    background: $white;
     color: #bbb;
     box-shadow: inset 0px 2px 3px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025);
     width: 100%;
@@ -533,7 +535,7 @@ table {
 
     thead {
       background: #4f4f4f;
-      color: #fff;
+      color: $white;
     }
   }
 }
@@ -587,7 +589,7 @@ button,
   -webkit-appearance: none;
   position: relative;
   display: inline-block;
-  color: #fff !important;
+  color: $white !important;
   text-decoration: none;
   font-weight: 700;
   border: 0;
@@ -602,11 +604,11 @@ button,
   font-size: 1.1em;
   max-width: 24em;
   font-family: inherit;
-  @include button-focus-outline();
+  @include button-focus-outline($main-red);
 
   &:hover {
     background-color: $hover-blue;
-    color: #fff !important;
+    color: $white !important;
   }
 
   &:active {
@@ -625,7 +627,7 @@ button,
 
     &:hover {
       background-color: #4f4f4f;
-      color: #fff !important;
+      color: $white !important;
     }
 
     &:active {
@@ -709,7 +711,7 @@ ul.social {
 
       &.fab,
       &.fas {
-        @include button-focus-outline();
+        @include button-focus-outline($main-red);
       }
 
       &.leetcode-icon:before,
@@ -784,7 +786,7 @@ ul.actions {
 /* Box */
 
 .box {
-  background: #fff;
+  background: $white;
   box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
   text-align: center;
   padding: 2em;
@@ -856,17 +858,17 @@ ul.actions {
 
   &.style1 {
     background-image: none;
-    background-color: #fff;
+    background-color: $white;
   }
 
   &.style2 {
     background-color: #fafafa;
-    text-shadow: 1px 1px 0px #fff;
+    text-shadow: 1px 1px 0px $white;
   }
 
   &.style3 {
     background-color: #f4f4f4;
-    text-shadow: 1px 1px 0px #fff;
+    text-shadow: 1px 1px 0px $white;
   }
 
   &.style4 {
@@ -880,7 +882,7 @@ ul.actions {
     h4,
     h5,
     h6 {
-      color: #fff;
+      color: $white;
     }
 
     form {
@@ -932,13 +934,13 @@ ul.actions {
     outline: 0;
     font-weight: 600;
     border-radius: 8px;
-    color: #fff;
+    color: $white;
     height: 2.5em;
     line-height: 2.5em;
     padding: 0 1.25em;
 
     &:hover {
-      color: #fff !important;
+      color: $white !important;
       background: #383838;
     }
 
@@ -962,6 +964,10 @@ ul.actions {
   .container {
     white-space: nowrap;
     overflow-x: auto;
+
+    li a {
+      @include button-focus-outline($white);
+    }
   }
 }
 

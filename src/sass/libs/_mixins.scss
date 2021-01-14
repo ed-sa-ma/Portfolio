@@ -65,9 +65,9 @@
 }
 
 /// Applies outline styles uniformly for all button and button-like elements in the page.
-@mixin button-focus-outline() {
+@mixin button-focus-outline($color) {
   &:focus {
-    outline: 2px solid $main-red;
+    outline: 2px solid $color;
     outline-offset: 2px;
   }
 }
