@@ -13,6 +13,17 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+// Color variables.
+
+$main-blue: #1ca9b0;
+$hover-blue: #1ebac2;
+$active-blue: #19989f;
+
+$main-red: #e76969;
+
+$main-black: #282828;
+$focus-black: #252525;
+
 // Breakpoints.
 
 @include breakpoints(
@@ -229,11 +240,11 @@ select {
 
 a {
   @include vendor("transition", "color .2s ease-in-out");
-  color: #1ca9b0;
+  color: $main-blue;
   text-decoration: underline;
 
   &:hover {
-    color: #1ebac2 !important;
+    color: $hover-blue !important;
   }
 
   img {
@@ -457,7 +468,7 @@ form {
 
     &:focus {
       background: #fafafa;
-      box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025), inset 0px 0px 2px 1px #1ebac2;
+      box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025), inset 0px 0px 2px 1px $active-blue;
       outline: none;
     }
   }
@@ -586,25 +597,21 @@ button,
   text-shadow: -1px -1px 0.5px rgba(0, 0, 0, 0.5);
   overflow: hidden;
   box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.5), inset 0px 2px 1px 0px rgba(255, 255, 255, 0.75);
-  background-color: #1ca9b0;
+  background-color: $main-blue;
   padding: 1em 2.35em 1em 2.35em;
   font-size: 1.1em;
   max-width: 24em;
   font-family: inherit;
+  @include button-focus-outline();
 
   &:hover {
-    background-color: #1ebac2;
+    background-color: $hover-blue;
     color: #fff !important;
   }
 
   &:active {
-    background-color: #19989f;
+    background-color: $active-blue;
     top: 1px;
-  }
-
-  &:focus {
-    outline: 2px solid #e76969;
-    outline-offset: 2px;
   }
 
   &.large {
@@ -677,7 +684,7 @@ ul.social {
         @include vendor("transition", "background-color .2s ease-in-out");
         background-color: #444;
         border-radius: 6px;
-        box-shadow: inset 0px 0px 0px 1px #282828, inset 0px 2px 1px 0px rgba(255, 255, 255, 0.1);
+        box-shadow: inset 0px 0px 0px 1px $main-black, inset 0px 2px 1px 0px rgba(255, 255, 255, 0.1);
         color: #2e2e2e !important;
         display: block;
         font-size: 26px;
@@ -698,6 +705,11 @@ ul.social {
         right: 0;
         bottom: 0;
         text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.1);
+      }
+
+      &.fab,
+      &.fas {
+        @include button-focus-outline();
       }
 
       &.leetcode-icon:before,
@@ -823,7 +835,7 @@ ul.actions {
   }
 
   &.featured {
-    color: #e76969;
+    color: $main-red;
     display: block;
     margin: 0 0 1.5em 0;
     cursor: default;
@@ -877,10 +889,10 @@ ul.actions {
       select,
       textarea {
         border: none;
-        background: #282828;
+        background: $main-black;
 
         &:focus {
-          background: #252525;
+          background: $focus-black;
         }
       }
     }
@@ -890,7 +902,7 @@ ul.actions {
 /* Nav */
 
 #nav {
-  background-color: #282828;
+  background-color: $main-black;
   text-align: center;
   position: fixed;
   left: 0;
@@ -942,7 +954,7 @@ ul.actions {
         margin-left: -0.75em;
         border-left: solid 0.75em transparent;
         border-right: solid 0.75em transparent;
-        border-top: solid 0.6em #282828;
+        border-top: solid 0.6em $main-black;
       }
     }
   }

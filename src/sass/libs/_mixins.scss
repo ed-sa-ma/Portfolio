@@ -63,3 +63,11 @@
 
   @return url("data:image/svg+xml;charset=utf8,#{$svg}");
 }
+
+/// Applies outline styles uniformly for all button and button-like elements in the page.
+@mixin button-focus-outline() {
+  &:focus {
+    outline: 2px solid $main-red;
+    outline-offset: 2px;
+  }
+}
