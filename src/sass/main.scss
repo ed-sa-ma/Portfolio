@@ -13,28 +13,50 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+// Color variables.
+
+$main-blue: #1ca9b0;
+$hover-blue: #1ebac2;
+$active-blue: #19989f;
+
+$main-red: #e76969;
+
+$main-black: #282828;
+$focus-black: #252525;
+
+$white: #ffffff;
+
 // Breakpoints.
 
 @include breakpoints(
   (
     xlarge: (
       1281px,
-      1680px,
+      1680px
     ),
     large: (
       981px,
-      1280px,
+      1280px
     ),
     medium: (
       737px,
-      980px,
+      980px
     ),
     small: (
       null,
-      736px,
-    ),
+      736px
+    )
   )
 );
+
+.wf-loading * {
+  opacity: 0;
+}
+
+.wf-active *,
+.wf-inactive * {
+  @include vendor("transition", "opacity 1s ease-out");
+}
 
 // Reset.
 // Based on meyerweb.com/eric/tools/css/reset (v2.0 | 20110126 | License: public domain)
@@ -205,23 +227,13 @@ html {
 
 body {
   padding-top: 3.5em;
-
-  // Stops initial animations until page loads.
-  &.is-preload {
-    *,
-    *:before,
-    *:after {
-      @include vendor("animation", "none !important");
-      @include vendor("transition", "none !important");
-    }
-  }
 }
 
 body,
 input,
 textarea,
 select {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Montserrat", "Open Sans", sans-serif;
   line-height: 1.85em;
   color: #888;
   font-weight: 300;
@@ -230,11 +242,11 @@ select {
 
 a {
   @include vendor("transition", "color .2s ease-in-out");
-  color: #43b3e0;
+  color: $main-blue;
   text-decoration: underline;
 
   &:hover {
-    color: #43bff0 !important;
+    color: $hover-blue !important;
   }
 
   img {
@@ -451,14 +463,15 @@ form {
     font-size: 1em;
     border-radius: 8px;
     border: solid 1px #ddd;
-    background: #fff;
+    background: $white;
     color: #bbb;
     box-shadow: inset 0px 2px 3px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025);
     width: 100%;
 
     &:focus {
       background: #fafafa;
-      box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025), inset 0px 0px 2px 1px #43bff0;
+      box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025), inset 0px 0px 2px 1px $active-blue;
+      outline: none;
     }
   }
 
@@ -522,7 +535,7 @@ table {
 
     thead {
       background: #4f4f4f;
-      color: #fff;
+      color: $white;
     }
   }
 }
@@ -576,7 +589,7 @@ button,
   -webkit-appearance: none;
   position: relative;
   display: inline-block;
-  color: #fff !important;
+  color: $white !important;
   text-decoration: none;
   font-weight: 700;
   border: 0;
@@ -586,18 +599,20 @@ button,
   text-shadow: -1px -1px 0.5px rgba(0, 0, 0, 0.5);
   overflow: hidden;
   box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.5), inset 0px 2px 1px 0px rgba(255, 255, 255, 0.75);
-  background-color: #43b3e0;
+  background-color: $main-blue;
   padding: 1em 2.35em 1em 2.35em;
   font-size: 1.1em;
   max-width: 24em;
+  font-family: inherit;
+  @include button-focus-outline($main-red);
 
   &:hover {
-    background-color: #43bff0;
-    color: #fff !important;
+    background-color: $hover-blue;
+    color: $white !important;
   }
 
   &:active {
-    background-color: #3ba8d3;
+    background-color: $active-blue;
     top: 1px;
   }
 
@@ -612,7 +627,7 @@ button,
 
     &:hover {
       background-color: #4f4f4f;
-      color: #fff !important;
+      color: $white !important;
     }
 
     &:active {
@@ -655,6 +670,7 @@ ul.social {
     margin: 0.25em;
     top: 0;
     padding-left: 0;
+    vertical-align: bottom;
 
     a {
       @include vendor("transition", "top .2s ease-in-out");
@@ -670,7 +686,7 @@ ul.social {
         @include vendor("transition", "background-color .2s ease-in-out");
         background-color: #444;
         border-radius: 6px;
-        box-shadow: inset 0px 0px 0px 1px #282828, inset 0px 2px 1px 0px rgba(255, 255, 255, 0.1);
+        box-shadow: inset 0px 0px 0px 1px $main-black, inset 0px 2px 1px 0px rgba(255, 255, 255, 0.1);
         color: #2e2e2e !important;
         display: block;
         font-size: 26px;
@@ -683,68 +699,60 @@ ul.social {
         width: 48px;
       }
 
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.1);
+      }
+
+      &.fab,
+      &.fas {
+        @include button-focus-outline($main-red);
+      }
+
+      &.leetcode-icon:before,
+      &.codewars-icon:before {
+        content: "";
+      }
+
+      &.leetcode-icon:after {
+        background-image: url("images/leetcode_icon.svg");
+      }
+
+      &.codewars-icon:after {
+        background-image: url("images/codewars_icon.svg");
+      }
+
+      &.codewars-icon {
+        background-color: #bb432c;
+      }
+
+      &.leetcode-icon {
+        background-color: #f9a825;
+      }
+
       &.fa-twitter {
         background-color: #2daae4;
-      }
-
-      &.fa-facebook-f {
-        background-color: #3c5a98;
-      }
-
-      &.fa-dribbble {
-        background-color: #c4376b;
       }
 
       &.fa-linkedin-in {
         background-color: #006599;
       }
 
-      &.fa-tumblr {
-        background-color: #51718a;
-      }
-
-      &.fa-google-plus {
-        background-color: #da2713;
-      }
-
       &.fa-github {
         background-color: #fafafa;
       }
 
-      &.fa-rss {
-        background-color: #f2600b;
-      }
-
-      &.fa-instagram {
-        background-color: #e0d7c8;
-      }
-
-      &.fa-foursquare {
-        background-color: #39a3d4;
+      &.fa-envelope {
+        background-color: #919191;
       }
 
       &.fa-skype {
         background-color: #10bef1;
-      }
-
-      &.fa-soundcloud {
-        background-color: #fe5419;
-      }
-
-      &.fa-youtube {
-        background-color: #bf2e25;
-      }
-
-      &.fa-blogger {
-        background-color: #ff6501;
-      }
-
-      &.fa-flickr {
-        background-color: #0062db;
-      }
-
-      &.fa-vimeo {
-        background-color: #4c8ab0;
       }
 
       &:hover {
@@ -778,10 +786,11 @@ ul.actions {
 /* Box */
 
 .box {
-  background: #fff;
+  background: $white;
   box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
   text-align: center;
   padding: 2em;
+  height: 100%;
 
   &.style1 {
     padding: 3em 2em 3.5em 2em;
@@ -814,6 +823,7 @@ ul.actions {
 
   &:before {
     font-size: 1.25em;
+    font-family: inherit;
   }
 
   > .label {
@@ -826,14 +836,8 @@ ul.actions {
     }
   }
 
-  &.brands {
-    &:before {
-      font-family: "Font Awesome 5 Brands";
-    }
-  }
-
   &.featured {
-    color: #ea8a95;
+    color: $main-red;
     display: block;
     margin: 0 0 1.5em 0;
     cursor: default;
@@ -854,17 +858,17 @@ ul.actions {
 
   &.style1 {
     background-image: none;
-    background-color: #fff;
+    background-color: $white;
   }
 
   &.style2 {
     background-color: #fafafa;
-    text-shadow: 1px 1px 0px #fff;
+    text-shadow: 1px 1px 0px $white;
   }
 
   &.style3 {
     background-color: #f4f4f4;
-    text-shadow: 1px 1px 0px #fff;
+    text-shadow: 1px 1px 0px $white;
   }
 
   &.style4 {
@@ -878,7 +882,7 @@ ul.actions {
     h4,
     h5,
     h6 {
-      color: #fff;
+      color: $white;
     }
 
     form {
@@ -887,10 +891,10 @@ ul.actions {
       select,
       textarea {
         border: none;
-        background: #282828;
+        background: $main-black;
 
         &:focus {
-          background: #252525;
+          background: $focus-black;
         }
       }
     }
@@ -900,7 +904,7 @@ ul.actions {
 /* Nav */
 
 #nav {
-  background-color: #282828;
+  background-color: $main-black;
   text-align: center;
   position: fixed;
   left: 0;
@@ -930,13 +934,13 @@ ul.actions {
     outline: 0;
     font-weight: 600;
     border-radius: 8px;
-    color: #fff;
+    color: $white;
     height: 2.5em;
     line-height: 2.5em;
     padding: 0 1.25em;
 
     &:hover {
-      color: #fff !important;
+      color: $white !important;
       background: #383838;
     }
 
@@ -952,8 +956,17 @@ ul.actions {
         margin-left: -0.75em;
         border-left: solid 0.75em transparent;
         border-right: solid 0.75em transparent;
-        border-top: solid 0.6em #282828;
+        border-top: solid 0.6em $main-black;
       }
+    }
+  }
+
+  .container {
+    white-space: nowrap;
+    overflow-x: auto;
+
+    li a {
+      @include button-focus-outline($white);
     }
   }
 }
