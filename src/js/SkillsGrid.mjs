@@ -43,7 +43,6 @@ export default class SkillsGrid extends HTMLElement {
   }
 
   attributeChangedCallback() {
-    debugger;
     let newSkills = this.getAttribute("data") || "";
 
     if (newSkills !== this.skills) {
