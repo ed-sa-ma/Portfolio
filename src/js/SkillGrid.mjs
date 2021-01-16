@@ -1,4 +1,4 @@
-export default class SkillsGrid extends HTMLElement {
+export default class SkillGrid extends HTMLElement {
   // Needed for attributeChangedCallback to work. See: https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements#using_the_lifecycle_callbacks
   static get observedAttributes() {
     return ["data"];

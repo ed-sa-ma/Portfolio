@@ -4,13 +4,13 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-import SkillsGrid from "./SkillsGrid.mjs";
+import SkillGrid from "./SkillGrid.mjs";
 import skills from "/src/content/skills.js";
 
-customElements.define("skills-grid", SkillsGrid);
+customElements.define("skill-grid", SkillGrid);
 
-let skillsGridElement = document.getElementsByTagName("skills-grid")[0];
-skillsGridElement.setAttribute("data", JSON.stringify(skills));
+let skillGridElement = document.getElementsByTagName("skill-grid")[0];
+skillGridElement.setAttribute("data", JSON.stringify(skills));
 
 window.onload = function handleOnLoad() {
   new SmoothScroll('a[href*="#"]', {
