@@ -11,11 +11,27 @@ export default class ReviewList extends HTMLElement {
     super();
   }
 
+  toggleSeeMoreButton(event) {
+    event.preventDefault();
+
+    let link = event.target;
+    let text = link.previousSibling;
+    let textClasses = text.classList;
+
+    if (textClasses.contains("line-clamp-text")) {
+      textClasses.remove("line-clamp-text");
+      link.innerText = "\nSee less";
+    } else {
+      textClasses.add("line-clamp-text");
+      link.innerText = "See more";
+    }
+  }
+
   updateMarkup(reviews) {
     // <div class="row aln-center">
     //   <div class="col-12">
     //     <article class="box style2">
-    //       <h3><a href="https://www.linkedin.com/in/marcel-kiczynski-7488a7168/">Marcel Kiczynski</a></h3>
+    //       <h3><a href="https://www.linkedin.com/in/marcel-kiczynski-7488a7168/" rel="noreferrer noopener" target="_blank">Marcel Kiczynski</a></h3>
     //       <h5>IT Delivery Lead bei E.ON Digital Technology</h5>
     //       <i class="line-clamp-text">
     //         Eduardo is one of the most talented frontend developers I've run into in my 14 years of IT-projects. He started in my team as a quiet
@@ -43,6 +59,8 @@ export default class ReviewList extends HTMLElement {
       let headline = article.appendChild(document.createElement("h3"));
       let link = headline.appendChild(document.createElement("a"));
       link.setAttribute("href", review.profileLink);
+      link.setAttribute("target", "__blank");
+      link.setAttribute("rel", "noopenenr noreferer");
       link.innerText = review.reviewer;
 
       let subheadline = article.appendChild(document.createElement("h5"));
@@ -50,12 +68,14 @@ export default class ReviewList extends HTMLElement {
 
       let text = article.appendChild(document.createElement("i"));
       text.setAttribute("class", "line-clamp-text");
-      text.innerText = review.text;
+      text.innerText = `${review.text}`;
 
       let seeMore = article.appendChild(document.createElement("a"));
       seeMore.setAttribute("href", "#");
       seeMore.setAttribute("role", "button");
       seeMore.innerText = "See more";
+
+      seeMore.addEventListener("click", this.toggleSeeMoreButton);
     }
 
     this.innerHTML = "";
