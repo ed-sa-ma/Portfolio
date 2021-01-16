@@ -872,6 +872,11 @@ ul.actions {
   }
 
   &.style4 {
+    background-color: #ececec;
+    text-shadow: 1px 1px 0px $white;
+  }
+
+  &.style5 {
     background-color: #303030;
     color: #999;
     text-shadow: -1px -1px 0px #181818;
@@ -977,6 +982,8 @@ body > article {
   margin-bottom: 0;
 }
 
+/* Top */
+
 #top {
   padding: 10em 0 10em 0;
   text-align: left;
@@ -1005,6 +1012,18 @@ body > article {
     }
   }
 }
+
+/* Reviews */
+#reviews {
+  .line-clamp-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+}
+
+/* Contact */
 
 #contact {
   footer {
