@@ -1,5 +1,12 @@
 export default [
   {
+    reviewer: "Daniel Kastenholz",
+    profileLink: "https://www.linkedin.com/in/daniel-kastenholz/",
+    charge: "Freelance Software Engineer",
+    text: `From 2018 to 2020, Eduardo and I were developers on the scrum team. The team was responsible for the maintenance and technical advancement of the corporate website of a leading German energy supplier. Besides the implementation of new editorial components, our team spent a great deal of time and effort on refactoring the highly entangled Adobe Experience Manager codebase to a modern, component- and React-based architecture. For Eduardo, this was only the second project after his recent graduation. Nevertheless he impressed us all by taking the steep learning curve quickly, with his great personal commitment to the team goals, and with the quality of his work.
+    Eduardo is a very hard-working developer, and I have can say that I have rarely met anyone as diligent, eager and disciplined as him in my 15+ years of industry experience. If he keeps going and learning at this pace, he has a bright future as a highly skilled developer and potential architect or team lead ahead of him. I really enjoyed working with Eduardo and think he is a valuable asset to any team.`
+  },
+  {
     reviewer: "Marcel Kiczynski",
     profileLink: "https://www.linkedin.com/in/marcel-kiczynski-7488a7168/",
     charge: "IT Delivery Lead bei E.ON Digital Technology",
