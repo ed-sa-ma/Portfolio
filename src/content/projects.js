@@ -8,12 +8,12 @@ export default [
     alt: ""
   },
   {
-    title: "Magna feugiat",
-    link: "#",
-    image: "images/pic02.jpg",
+    title: "Collaboration tool full-stack",
+    link: "https://excalidraw.com/#json=4659673831571456,GwvkL7Pi_4e2DHtozDkXyw",
+    image: "images/Excalidraw_diagram.png",
     description:
       "Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat.",
-    alt: ""
+    alt: "excalidraw diagram miniature"
   },
   {
     title: "Magna feugiat",
