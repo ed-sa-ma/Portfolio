@@ -12,30 +12,34 @@ export default class SkillGrid extends HTMLElement {
   }
 
   updateMarkup(skills) {
+    //  <div class="row aln-center">
+    //     <div class="col-4 col-6-medium col-12-small">
+    //       <section class="box style1">
+    //         <span class="icon featured fab fa-react"></span>
+    //         <h3>React specialist for professional projects</h3>
+    //         <p>This is sample content hardcoded within a web component</p>
+    //       </section>
+    //     </div>
+    //     ...
+    //  </div>
     let wrapper = document.createElement("div");
     wrapper.setAttribute("class", "row aln-center");
 
     for (let skill of skills) {
-      let column = document.createElement("div");
+      let column = wrapper.appendChild(document.createElement("div"));
       column.setAttribute("class", "col-4 col-6-medium col-12-small");
 
-      let section = document.createElement("section");
+      let section = column.appendChild(document.createElement("section"));
       section.setAttribute("class", "box style1");
 
-      let icon = document.createElement("span");
+      let icon = section.appendChild(document.createElement("span"));
       icon.setAttribute("class", `icon featured ${skill.iconClass}`);
 
-      let headline = document.createElement("h3");
+      let headline = section.appendChild(document.createElement("h3"));
       headline.innerText = skill.title;
 
-      let paragraph = document.createElement("p");
+      let paragraph = section.appendChild(document.createElement("p"));
       paragraph.innerText = skill.description;
-
-      section.appendChild(icon);
-      section.appendChild(headline);
-      section.appendChild(paragraph);
-      column.appendChild(section);
-      wrapper.appendChild(column);
     }
 
     this.innerHTML = "";

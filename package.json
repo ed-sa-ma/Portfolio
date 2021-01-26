@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npm run watch | live-server --watch=src/**/*,index.html",
     "scss": "sass --no-source-map src/sass/main.scss assets/css/main.css",
-    "watch": "npm run scss && chokidar \"src/sass/**/*.scss\" -c \"npm run scss && http-server\""
+    "watch": "npm run scss && chokidar \"src/sass/**/*.scss\" -c \"npm run scss\""
   },
   "repository": {
     "type": "git",

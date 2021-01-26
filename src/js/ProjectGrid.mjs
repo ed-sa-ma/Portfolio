@@ -30,8 +30,6 @@ export default class ProjectGrid extends HTMLElement {
     wrapper.setAttribute("class", "row aln-center");
 
     for (let project of projects) {
-      console.log({ project });
-
       let column = wrapper.appendChild(document.createElement("div"));
       column.setAttribute("class", "col-4 col-6-medium col-12-small");
 
