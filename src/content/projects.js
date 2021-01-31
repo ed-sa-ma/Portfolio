@@ -1,11 +1,11 @@
 export default [
   {
-    title: "Magna feugiat",
+    title: "Photo presentation gift",
     link: "#",
-    image: "images/pic01.jpg",
+    image: "images/Svelte_site.png",
     description:
       "Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat.",
-    alt: ""
+    alt: "photo presentation miniatue"
   },
   {
     title: "Collaboration tool full-stack",
@@ -14,13 +14,5 @@ export default [
     description:
       "Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat.",
     alt: "excalidraw diagram miniature"
-  },
-  {
-    title: "Magna feugiat",
-    link: "#",
-    image: "images/pic03.jpg",
-    description:
-      "Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat.",
-    alt: ""
   }
 ];
