@@ -1,2 +1,2 @@
 # sample-project-gift
-/gift https://ed-sa-ma-gift.netlify.app 200
+/gift/* https://ed-sa-ma-gift.netlify.app/:splat 200
