@@ -13,6 +13,7 @@ export default [
     image: "images/Excalidraw_diagram.png",
     description:
       "Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat.",
-    alt: "excalidraw diagram miniature"
+    alt: "excalidraw diagram miniature",
+    openInNewTab: true
   }
 ];

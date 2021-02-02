@@ -39,8 +39,10 @@ export default class ProjectGrid extends HTMLElement {
       let imageLink = article.appendChild(document.createElement("a"));
       imageLink.setAttribute("href", project.link);
       imageLink.setAttribute("class", "image featured");
-      imageLink.setAttribute("target", "_blank");
-      imageLink.setAttribute("rel", "noopener noreferer");
+      if (project.openInNewTab) {
+        imageLink.setAttribute("target", "_blank");
+        imageLink.setAttribute("rel", "noopener noreferer");
+      }
 
       let image = imageLink.appendChild(document.createElement("img"));
       image.setAttribute("src", project.image);
@@ -49,8 +51,10 @@ export default class ProjectGrid extends HTMLElement {
       let headline = article.appendChild(document.createElement("h3"));
       let headlineLink = headline.appendChild(document.createElement("a"));
       headlineLink.setAttribute("href", project.link);
-      headlineLink.setAttribute("target", "_blank");
-      headlineLink.setAttribute("rel", "noopener noreferer");
+      if (project.openInNewTab) {
+        headlineLink.setAttribute("target", "_blank");
+        headlineLink.setAttribute("rel", "noopener noreferer");
+      }
       headlineLink.innerHTML = project.title;
 
       let paragraph = article.appendChild(document.createElement("p"));
