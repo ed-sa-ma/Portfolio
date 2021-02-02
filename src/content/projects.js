@@ -1,7 +1,7 @@
 export default [
   {
     title: "Photo presentation gift",
-    link: "#",
+    link: "/gift",
     image: "images/Svelte_site.png",
     description:
       "Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat.",
