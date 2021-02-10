@@ -5,7 +5,7 @@ export default [
     image: "images/Svelte_site.png",
     description:
       "Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat.",
-    alt: "photo presentation miniatue"
+    alt: "photo presentation miniature"
   },
   {
     title: "Collaboration tool full-stack",
