@@ -1,11 +1,11 @@
 export default [
   {
-    title: "Magna feugiat",
-    link: "#",
-    image: "images/pic01.jpg",
+    title: "Photo presentation gift",
+    link: "/gift",
+    image: "images/Svelte_site.png",
     description:
       "Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat.",
-    alt: ""
+    alt: "photo presentation miniature"
   },
   {
     title: "Collaboration tool full-stack",
@@ -13,14 +13,7 @@ export default [
     image: "images/Excalidraw_diagram.png",
     description:
       "Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat.",
-    alt: "excalidraw diagram miniature"
-  },
-  {
-    title: "Magna feugiat",
-    link: "#",
-    image: "images/pic03.jpg",
-    description:
-      "Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat.",
-    alt: ""
+    alt: "excalidraw diagram miniature",
+    openInNewTab: true
   }
 ];

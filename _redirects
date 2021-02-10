@@ -1,0 +1,15 @@
+# sample-project-gift
+
+#########################################################################################
+# If we just set a simple redirect from <portfolio_host>/gift to <gift_app_host>        #
+# the browser will be able to fetch index.html in <portfolio_host>/gift but not         #
+# all assets linked from there (e.g. /build/main.js) because they will be searched      #
+# from the current host instead of the current location (<portfolio_host>/build/main.js #
+# instead of <portfolio_host>/gift/build/main.js). To solve this we create a            #
+# sub-folder gift-assets/ to target with an additional redirect rule.                   #
+#                                                                                       #
+# Using relative path to the current location (like build/main.js) doesn't fix this.    #
+#########################################################################################
+
+/gift https://ed-sa-ma-gift.netlify.app/ 200
+/gift-assets/* https://ed-sa-ma-gift.netlify.app/gift-assets/:splat 200
