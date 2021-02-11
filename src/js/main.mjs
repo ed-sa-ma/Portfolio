@@ -31,10 +31,4 @@ window.onload = function handleOnLoad() {
     header: "#nav",
     speedAsDuration: true
   });
-
-  WebFont.load({
-    google: {
-      families: ["Montserrat"]
-    }
-  });
 };
