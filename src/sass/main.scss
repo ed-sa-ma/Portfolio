@@ -4,8 +4,7 @@
 @import "libs/vendor";
 @import "libs/breakpoints";
 @import "libs/html-grid";
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400;1,600&display=swap");
-@import url("fontawesome-all.min.css");
+@import "fontawesome-all.min.css";
 
 /*
 	Miniport by HTML5 UP
@@ -581,7 +580,6 @@ button,
   display: inline-block;
   color: $white !important;
   text-decoration: none;
-  font-weight: 700;
   border: 0;
   outline: 0;
   cursor: pointer;
