@@ -16,10 +16,10 @@ export default class SkillGrid extends HTMLElement {
     //     <div class="col-4 col-6-medium col-12-small">
     //       <section class="box style1">
     //         <div class="svg-container">
-    //           <svg>svgIcon</svg>
+    //           {svgIcon}
     //         </div>
-    //         <h3>title</h3>
-    //         <p>description</p>
+    //         <h3>{title}</h3>
+    //         <p>{description}</p>
     //       </section>
     //     </div>
     //     ...

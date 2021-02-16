@@ -15,12 +15,9 @@ export default class ProjectGrid extends HTMLElement {
     // <div class="row aln-center">
     //   <div class="col-4 col-6-medium col-12-small">
     //     <article class="box style2">
-    //       <a href="#" class="image featured" rel="noopener noreferer" target="_blank"><img src="images/pic01.jpg" alt="" /></a>
-    //       <h3><a href="#">Magna feugiat</a></h3>
-    //       <p>
-    //         Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio consequat. Ornare nulla proin odio
-    //         consequat. Ornare nulla proin odio consequat.
-    //       </p>
+    //       <a href="{link}" class="image featured" rel="noopener noreferer" target="_blank"><img src="{image}" alt="{alt}" /></a>
+    //       <h3><a href="{link}">{title}</a></h3>
+    //       <p>{description}</p>
     //     </article>
     //   </div>
     //   ...
