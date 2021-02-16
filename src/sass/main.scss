@@ -474,12 +474,6 @@ article:last-child {
     display: block;
     width: 100%;
   }
-
-  &.featured {
-    display: block;
-    width: 100%;
-    margin: 0 0 2em 0;
-  }
 }
 
 /* Button */
@@ -661,10 +655,13 @@ ul.actions {
 /* Box */
 
 .box {
+  --box-horizontal-padding: 2em;
+  --box-vertical-padding: 2em;
+
   background: $white;
   box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
   text-align: center;
-  padding: 2em;
+  padding: var(--box-vertical-padding) var(--box-horizontal-padding);
   height: 100%;
 
   &.style1 {
@@ -686,11 +683,13 @@ ul.actions {
     }
 
     .image {
+      --padding: 1px; // Spacing left to let see the box-shadow of the enclosing .box
+
       position: relative;
-      left: 2em;
-      top: 2em;
-      margin: -4em 0 4em -4em;
-      width: auto;
+      top: calc(var(--padding) - var(--box-vertical-padding));
+      left: calc(var(--padding) - var(--box-horizontal-padding));
+
+      width: calc(100% - 2 * var(--padding) + 2 * var(--box-horizontal-padding));
     }
   }
 }
@@ -1086,7 +1085,10 @@ body > article {
   /* Box */
 
   .box {
-    padding: 30px 20px 30px 20px;
+    --box-vertical-padding: 30px;
+    --box-horizontal-padding: 20px;
+
+    padding: var(--box-vertical-padding) var(--box-horizontal-padding);
     margin: 0 0 20px 0 !important;
 
     h3 {
@@ -1096,14 +1098,6 @@ body > article {
     .image {
       &.centered {
         margin-bottom: 1em;
-      }
-
-      &.featured {
-        position: relative;
-        left: 20px;
-        top: 20px;
-        margin: -50px 0 50px -40px;
-        width: auto;
       }
     }
 
