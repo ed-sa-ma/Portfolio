@@ -733,6 +733,13 @@ ul.actions {
   }
 }
 
+/* svg */
+
+.svg-container svg {
+  max-height: 6em;
+  color: $main-red;
+}
+
 /* Wrappers */
 
 .wrapper {

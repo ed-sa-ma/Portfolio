@@ -15,13 +15,16 @@ export default class SkillGrid extends HTMLElement {
     //  <div class="row aln-center">
     //     <div class="col-4 col-6-medium col-12-small">
     //       <section class="box style1">
-    //         <span class="icon featured fab fa-react"></span>
-    //         <h3>React specialist for professional projects</h3>
-    //         <p>This is sample content hardcoded within a web component</p>
+    //         <div class="svg-container">
+    //           <svg>svgIcon</svg>
+    //         </div>
+    //         <h3>title</h3>
+    //         <p>description</p>
     //       </section>
     //     </div>
     //     ...
     //  </div>
+
     let wrapper = document.createElement("div");
     wrapper.setAttribute("class", "row aln-center");
 
@@ -32,8 +35,9 @@ export default class SkillGrid extends HTMLElement {
       let section = column.appendChild(document.createElement("section"));
       section.setAttribute("class", "box style1");
 
-      let icon = section.appendChild(document.createElement("span"));
-      icon.setAttribute("class", `icon featured ${skill.iconClass}`);
+      let svgWrapper = section.appendChild(document.createElement("div"));
+      svgWrapper.setAttribute("class", "svg-container");
+      svgWrapper.innerHTML = skill.svgIcon;
 
       let headline = section.appendChild(document.createElement("h3"));
       headline.innerText = skill.title;
