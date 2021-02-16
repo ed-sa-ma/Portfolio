@@ -1,5 +1,3 @@
-@import "libs/vars";
-@import "libs/functions";
 @import "libs/mixins";
 @import "libs/vendor";
 @import "libs/breakpoints";
@@ -163,33 +161,8 @@ ul {
   list-style: none;
 }
 
-blockquote,
-q {
-  quotes: none;
-
-  &:before,
-  &:after {
-    content: none;
-  }
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
 body {
   -webkit-text-size-adjust: none;
-}
-
-mark {
-  background-color: transparent;
-  color: inherit;
-}
-
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
 }
 
 input,
@@ -255,24 +228,6 @@ em {
   font-style: italic;
 }
 
-sub {
-  position: relative;
-  top: 0.5em;
-  font-size: 0.8em;
-}
-
-sup {
-  position: relative;
-  top: -0.5em;
-  font-size: 0.8em;
-}
-
-blockquote {
-  border-left: solid 0.75em #eee;
-  padding: 1em 0 1em 1.5em;
-  font-style: italic;
-}
-
 h1,
 h2,
 h3,
@@ -324,10 +279,6 @@ h3 {
 em,
 i {
   font-style: italic;
-}
-
-br.clear {
-  clear: both;
 }
 
 hr {
@@ -495,41 +446,6 @@ form {
     border: 0;
   }
 }
-
-/* Tables */
-
-table {
-  width: 100%;
-
-  &.default {
-    width: 100%;
-
-    tr {
-      border-top: solid 1px #eee;
-
-      &:first-child {
-        border-top: 0;
-      }
-    }
-
-    td {
-      padding: 0.5em 1em 0.5em 1em;
-    }
-
-    th {
-      text-align: left;
-      padding: 0.5em 1em 0.5em 1em;
-      font-weight: 600;
-      margin: 0 0 1em 0;
-    }
-
-    thead {
-      background: #4f4f4f;
-      color: $white;
-    }
-  }
-}
-
 /* Section/Article */
 
 section,
@@ -630,15 +546,6 @@ ul {
 
   li {
     padding-left: 0.5em;
-  }
-}
-
-ol {
-  list-style: decimal;
-  padding-left: 1.25em;
-
-  li {
-    padding-left: 0.25em;
   }
 }
 
@@ -814,12 +721,6 @@ ul.actions {
     display: none;
   }
 
-  &.solid {
-    &:before {
-      font-weight: 900;
-    }
-  }
-
   &.featured {
     color: $main-red;
     display: block;
@@ -933,7 +834,7 @@ ul.actions {
       background: #383838;
     }
 
-    &.active {
+    &:active {
       background: #484848;
 
       &:before {
@@ -1079,13 +980,6 @@ body > article {
   .wrapper {
     padding: 5em 0 5em 0;
     text-align: center;
-
-    &.style4 {
-      .row-special {
-        margin: 2em 0 0 0;
-        padding: 2em 0 2em 0;
-      }
-    }
   }
 
   /* Articles */
