@@ -602,7 +602,15 @@ ul.social {
       }
 
       &.github-button {
-        background-color: #fafafa;
+        background-color: #f0f6fc;
+      }
+
+      &.codepen-button {
+        background-color: #ae63e4;
+      }
+
+      &.cv-button {
+        background-color: #ffffff;
       }
 
       &.email-button {

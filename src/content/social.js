@@ -3,6 +3,8 @@ import twitterSvg from "./inlineSvgs/twitter.js";
 import githubSvg from "./inlineSvgs/github.js";
 import leetcodeSvg from "./inlineSvgs/leetcode.js";
 import codeWarsSvg from "./inlineSvgs/codewars.js";
+import codePenSvg from "./inlineSvgs/codepen.js";
+import cvSvg from "./inlineSvgs/cv.js";
 import emailSvg from "./inlineSvgs/email.js";
 import skypeSvg from "./inlineSvgs/skype.js";
 
@@ -36,6 +38,18 @@ export default [
     link: "https://www.codewars.com/users/ed-sa-ma",
     linkClass: "codewars-button",
     svgIcon: codeWarsSvg
+  },
+  {
+    media: "CodePen",
+    link: "https://codepen.io/ed-sa-ma",
+    linkClass: "codepen-button",
+    svgIcon: codePenSvg
+  },
+  {
+    media: "CV",
+    link: "https://www.read.cv/ed_sa_ma",
+    linkClass: "cv-button",
+    svgIcon: cvSvg
   },
   {
     media: "Email",
