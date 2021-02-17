@@ -31,15 +31,9 @@ export default class ReviewList extends HTMLElement {
     // <div class="row aln-center">
     //   <div class="col-12">
     //     <article class="box style2">
-    //       <h3><a href="https://www.linkedin.com/in/marcel-kiczynski-7488a7168/" rel="noreferrer noopener" target="_blank">Marcel Kiczynski</a></h3>
-    //       <h5>IT Delivery Lead bei E.ON Digital Technology</h5>
-    //       <i class="line-clamp-text">
-    //         Eduardo is one of the most talented frontend developers I've run into in my 14 years of IT-projects. He started in my team as a quiet
-    //         and junior developer for JavaScript and React and in less than two years he become a mainstays of our front-end team. He was always
-    //         motivated and ready to learn. I was particularly impressed by his ability to improve his skills by the feedback he got. He
-    //         continuously improved his skills and grow with an incredible speed. In addition to his technical skills, he is a very good team player
-    //         and was a valued member of the team. Thank you Eduardo for the great cooperation. Whenever you are around the door is always open.
-    //       </i>
+    //       <h3><a href="{profileLink}" rel="noreferrer noopener" target="_blank">{reviewer}</a></h3>
+    //       <h5>{charge}</h5>
+    //       <i class="line-clamp-text">{text}</i>
     //       <a href="#" role="button">See more</a>
     //     </article>
     //   </div>
