@@ -1,8 +1,5 @@
 .DS_Store
 
-# Default test images used in the original template from [html-up]()
-/images/pic*
-
 # Generated css
 assets/css/main.css
 assets/css/main_min.css
