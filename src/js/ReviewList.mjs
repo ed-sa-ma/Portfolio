@@ -57,7 +57,7 @@ export default class ReviewList extends HTMLElement {
       link.setAttribute("rel", "noopenenr noreferer");
       link.innerText = review.reviewer;
 
-      let subheadline = article.appendChild(document.createElement("h5"));
+      let subheadline = article.appendChild(document.createElement("h4"));
       subheadline.innerText = review.charge;
 
       let text = article.appendChild(document.createElement("i"));
