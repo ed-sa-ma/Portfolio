@@ -13,11 +13,13 @@ import ProjectGrid from "./ProjectGrid.mjs";
 import ReviewList from "./ReviewList.mjs";
 import SocialButtons from "./SocialButtons.mjs";
 
+// Register custom-elements.
 customElements.define("skill-grid", SkillGrid);
 customElements.define("review-list", ReviewList);
 customElements.define("project-grid", ProjectGrid);
 customElements.define("social-buttons", SocialButtons);
 
+// Pass data to web components from js files.
 let skillGridElement = document.getElementsByTagName("skill-grid")[0];
 skillGridElement.setAttribute("data", JSON.stringify(skills));
 
@@ -30,6 +32,43 @@ projectGridElement.setAttribute("data", JSON.stringify(projects));
 let socialButtonsElement = document.getElementsByTagName("social-buttons")[0];
 socialButtonsElement.setAttribute("data", JSON.stringify(social));
 
+let contactForm = document.querySelector("#contact-form");
+let formInputs = contactForm.querySelectorAll("[id]:not(button)");
+
+// Handle email sending from contact form.
+function handleOnClickSubmit(event) {
+  event.preventDefault();
+
+  let { name: nameInput, email: emailInput, subject: subjectInput, message: messageInput } = event.target.elements;
+
+  let name = nameInput.value;
+  let email = emailInput.value;
+  let subject = subjectInput.value || "Web site contact form email.";
+  let message = messageInput.value;
+
+  console.log({ name, email, subject, message });
+
+  let hasConfirmed = confirm("Do you confirm you want to send me the message?");
+
+  if (hasConfirmed) {
+    console.log("Sending...");
+  }
+}
+
+contactForm.addEventListener("submit", handleOnClickSubmit);
+
+// Add class once one of the input is focused to show invalid state.
+function handleFirstFocus(event) {
+  let inputElement = event.target;
+
+  inputElement.classList.add("already-focused");
+}
+
+for (let input of formInputs) {
+  input.addEventListener("focus", handleFirstFocus, { once: true });
+}
+
+// Enable smooth scrolling.
 window.onload = function handleOnLoad() {
   new SmoothScroll('a[href*="#"]', {
     speed: 1000,
