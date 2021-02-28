@@ -13,6 +13,8 @@ import ProjectGrid from "./ProjectGrid.mjs";
 import ReviewList from "./ReviewList.mjs";
 import SocialButtons from "./SocialButtons.mjs";
 
+const DEFAULT_MAIL_SUBJECT = "Portfolio contact form email";
+
 // Register custom-elements.
 customElements.define("skill-grid", SkillGrid);
 customElements.define("review-list", ReviewList);
@@ -43,15 +45,24 @@ function handleOnClickSubmit(event) {
 
   let name = nameInput.value;
   let email = emailInput.value;
-  let subject = subjectInput.value || "Web site contact form email.";
+  let subject = subjectInput.value || DEFAULT_MAIL_SUBJECT;
   let message = messageInput.value;
-
-  console.log({ name, email, subject, message });
 
   let hasConfirmed = confirm("Do you confirm you want to send me the message?");
 
   if (hasConfirmed) {
-    console.log("Sending...");
+    Email.send({
+      SecureToken: "fb72ed97-b47a-4684-9634-8621859f3b59",
+      To: "ed.sanz.martin@gmail.com",
+      From: `${name} <${email}>`,
+      Subject: subject,
+      Body: message
+    })
+      .then((message) => {
+        alert(`Email send result: ${message}`);
+        console.log(`Email send result: ${message}`);
+      })
+      .catch((error) => alert(`Error sending email: ${error}`));
   }
 }
 
