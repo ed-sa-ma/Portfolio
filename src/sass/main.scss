@@ -404,16 +404,26 @@ form {
     padding: 0.75em;
     font-size: 1em;
     border-radius: 8px;
-    border: solid 1px #ddd;
-    background: $main-white;
+    background-color: $main-black;
+    border: none;
     color: #bbb;
     box-shadow: inset 0px 2px 3px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025);
     width: 100%;
 
     &:focus {
-      background: #fafafa;
-      box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025), inset 0px 0px 2px 1px $active-blue;
+      background-color: $focus-black;
+      box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025), inset 0px 0px 2px 1px $active-blue !important;
       outline: none;
+    }
+
+    // Small hack to style inputs when navigator's autocomplete is chosen.
+    &:-webkit-autofill,
+    &:-webkit-autofill:focus {
+      -webkit-box-shadow: 0 0 0px 1000px $focus-black inset !important;
+      box-shadow: 0 0 0px 1000px $focus-black inset !important;
+      -webkit-text-fill-color: $main-white;
+      caret-color: $main-white;
+      border: 1px solid $main-blue;
     }
 
     &.already-focused:not(:focus):invalid {
@@ -749,20 +759,6 @@ ul.actions {
     h5,
     h6 {
       color: $main-white;
-    }
-
-    form {
-      input[type="text"],
-      input[type="password"],
-      select,
-      textarea {
-        border: none;
-        background: $main-black;
-
-        &:focus {
-          background: $focus-black;
-        }
-      }
     }
   }
 }
