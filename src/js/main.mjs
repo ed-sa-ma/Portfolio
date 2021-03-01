@@ -62,7 +62,11 @@ function handleOnClickSubmit(event) {
         alert(`Email send result: ${message}`);
         console.log(`Email send result: ${message}`);
       })
-      .catch((error) => alert(`Error sending email: ${error}`));
+      .catch((error) => {
+        alert(`Error sending email: ${error}`);
+        console.log(`Error sending email: ${error}`);
+      });
+
   }
 }
 
