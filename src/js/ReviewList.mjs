@@ -32,7 +32,7 @@ export default class ReviewList extends HTMLElement {
     //   <div class="col-12">
     //     <article class="box style2">
     //       <h3><a href="{profileLink}" rel="noreferrer noopener" target="_blank">{reviewer}</a></h3>
-    //       <h5>{charge}</h5>
+    //       <h4>{charge}</h4>
     //       <i class="line-clamp-text">{text}</i>
     //       <a href="#" role="button">See more</a>
     //     </article>
