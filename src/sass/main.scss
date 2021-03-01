@@ -10,17 +10,18 @@
 */
 
 // Color variables.
-
-$main-blue: #1ca9b0;
-$hover-blue: #1ebac2;
-$active-blue: #19989f;
+$main-blue: #13767c;
+$hover-blue: #16878d;
+$active-blue: #11656a;
 
 $main-red: #e76969;
 
 $main-black: #282828;
 $focus-black: #252525;
 
-$white: #ffffff;
+$main-grey: #666;
+
+$main-white: #ffffff;
 
 // Breakpoints.
 
@@ -197,7 +198,7 @@ textarea,
 select {
   font-family: "Montserrat", sans-serif;
   line-height: 1.85em;
-  color: #888;
+  color: $main-grey;
   font-weight: 300;
   font-size: 13pt;
 }
@@ -208,7 +209,7 @@ a {
   text-decoration: underline;
 
   &:hover {
-    color: $hover-blue !important;
+    color: $hover-blue;
   }
 
   img {
@@ -385,9 +386,10 @@ footer {
 
 form {
   label {
-    color: #3e3e3e;
+    color: $main-white;
     font-weight: 700;
     display: block;
+    text-align: start;
     margin: 0 0 0.5em 0;
   }
 
@@ -402,15 +404,30 @@ form {
     padding: 0.75em;
     font-size: 1em;
     border-radius: 8px;
-    border: solid 1px #ddd;
-    background: $white;
+    background-color: $main-black;
+    border: none;
     color: #bbb;
     box-shadow: inset 0px 2px 3px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025);
     width: 100%;
 
     &:focus {
-      background: #fafafa;
+      background-color: $focus-black;
       box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025), inset 0px 0px 2px 1px $active-blue;
+      outline: none;
+    }
+
+    // Small hack to style inputs when navigator's autocomplete is chosen.
+    &:-webkit-autofill,
+    &:-webkit-autofill:focus {
+      -webkit-box-shadow: 0 0 0px 1000px $focus-black inset;
+      box-shadow: 0 0 0px 1000px $focus-black inset;
+      -webkit-text-fill-color: $main-white;
+      caret-color: $main-white;
+      border: 1px solid $main-blue;
+    }
+
+    &.already-focused:not(:focus):invalid {
+      box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025), inset 0px 0px 2px 1px $main-red;
       outline: none;
     }
   }
@@ -423,22 +440,6 @@ form {
     &:last-child {
       margin-bottom: 0;
     }
-  }
-
-  ::-webkit-input-placeholder {
-    color: #555 !important;
-  }
-
-  :-moz-placeholder {
-    color: #555 !important;
-  }
-
-  ::-moz-placeholder {
-    color: #555 !important;
-  }
-
-  :-ms-input-placeholder {
-    color: #555 !important;
   }
 
   ::-moz-focus-inner {
@@ -487,7 +488,7 @@ button,
   -webkit-appearance: none;
   position: relative;
   display: inline-block;
-  color: $white !important;
+  color: $main-white;
   text-decoration: none;
   border: 0;
   outline: 0;
@@ -504,7 +505,7 @@ button,
 
   &:hover {
     background-color: $hover-blue;
-    color: $white !important;
+    color: $main-white;
   }
 
   &:active {
@@ -522,7 +523,7 @@ button,
 
     &:hover {
       background-color: #4f4f4f;
-      color: $white !important;
+      color: $main-white;
     }
 
     &:active {
@@ -666,7 +667,7 @@ ul.actions {
   --box-horizontal-padding: 2em;
   --box-vertical-padding: 2em;
 
-  background: $white;
+  background: $main-white;
   box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
   text-align: center;
   padding: var(--box-vertical-padding) var(--box-horizontal-padding);
@@ -705,29 +706,29 @@ ul.actions {
 /* Wrappers */
 
 .wrapper {
-  background-image: url("images/bg.png");
+  background-image: url("/assets/images/granular_bg.png");
   box-shadow: inset 0px 1px 0px 0px rgba(0, 0, 0, 0.05), inset 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
   padding: 8em 0 8em 0;
   text-align: center;
 
   &.style1 {
     background-image: none;
-    background-color: $white;
+    background-color: $main-white;
   }
 
   &.style2 {
     background-color: #fafafa;
-    text-shadow: 1px 1px 0px $white;
+    text-shadow: 1px 1px 0px $main-white;
   }
 
   &.style3 {
     background-color: #f4f4f4;
-    text-shadow: 1px 1px 0px $white;
+    text-shadow: 1px 1px 0px $main-white;
   }
 
   &.style4 {
     background-color: #ececec;
-    text-shadow: 1px 1px 0px $white;
+    text-shadow: 1px 1px 0px $main-white;
   }
 
   &.style5 {
@@ -741,21 +742,7 @@ ul.actions {
     h4,
     h5,
     h6 {
-      color: $white;
-    }
-
-    form {
-      input[type="text"],
-      input[type="password"],
-      select,
-      textarea {
-        border: none;
-        background: $main-black;
-
-        &:focus {
-          background: $focus-black;
-        }
-      }
+      color: $main-white;
     }
   }
 }
@@ -793,13 +780,13 @@ ul.actions {
     outline: 0;
     font-weight: 600;
     border-radius: 8px;
-    color: $white;
+    color: $main-white;
     height: 2.5em;
     line-height: 2.5em;
     padding: 0 1.25em;
 
     &:hover {
-      color: $white !important;
+      color: $main-white;
       background: #383838;
     }
 
@@ -825,7 +812,7 @@ ul.actions {
     overflow-x: auto;
 
     li a {
-      @include button-focus-outline($white);
+      @include button-focus-outline($main-white);
     }
   }
 }
@@ -1066,10 +1053,10 @@ body > article {
       margin: 0.5em 0.5em 0.5em 0.5em;
 
       a {
-        top: 0 !important;
+        top: 0;
 
         &:before {
-          background-color: transparent !important;
+          background-color: transparent;
         }
       }
     }
@@ -1097,7 +1084,7 @@ body > article {
     --box-horizontal-padding: 20px;
 
     padding: var(--box-vertical-padding) var(--box-horizontal-padding);
-    margin: 0 0 20px 0 !important;
+    margin: 0 0 20px 0;
 
     h3 {
       margin-bottom: 0.25em;
@@ -1111,14 +1098,14 @@ body > article {
 
     &.style1 {
       max-width: 32em;
-      margin-left: auto !important;
-      margin-right: auto !important;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     &.style2 {
       max-width: 32em;
-      margin-left: auto !important;
-      margin-right: auto !important;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 

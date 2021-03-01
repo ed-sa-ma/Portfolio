@@ -4,15 +4,19 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="en">
   <head>
     <title>ed-sa-ma</title>
+
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="shortcut icon" type="image/ico" href="images/favicon96.ico" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Personal website for professional promotion by Eduardo Sanz Martín (@ed-sa-ma)." />
+    <meta property="og:image" content="assets/images/logo512_red.png" />
+
+    <link rel="preload" as="style" href="assets/font/font-face.css" />
+    <link rel="stylesheet" href="assets/font/font-face.css" />
+    <link rel="stylesheet" href="assets/css/main_min.css" />
+    <link rel="shortcut icon" type="image/ico" href="assets/images/favicon96.ico" />
   </head>
   <body>
     <!-- Nav -->
@@ -32,11 +36,11 @@
       <div class="container">
         <div class="row">
           <div class="col-4 col-5-large col-12-medium">
-            <span class="image fit"><img src="images/logo512_red.png" alt="logo" /></span>
+            <span class="image fit"><img src="assets/images/logo512_red.png" alt="logo" /></span>
           </div>
           <div class="col-8 col-7-large col-12-medium">
             <header>
-              <h1>Hi. I'm <strong>Eduardo</strong>.</h1>
+              <h1>Hi, I'm <strong>Eduardo</strong>.</h1>
             </header>
             <p>
               And this is <strong>Miniport</strong>, a free, fully responsive HTML5 site template designed by
@@ -101,37 +105,44 @@
           <h2>Have me make stuff for you.</h2>
           <p>Ornare nulla proin odio consequat sapien vestibulum ipsum.</p>
         </header>
-        <div class="row">
-          <div class="col-12">
-            <form method="post" action="#">
-              <div class="row">
-                <div class="col-6 col-12-small">
-                  <input type="text" name="name" id="name" placeholder="Name" />
-                </div>
-                <div class="col-6 col-12-small">
-                  <input type="text" name="email" id="email" placeholder="Email" />
-                </div>
-                <div class="col-12">
-                  <input type="text" name="subject" id="subject" placeholder="Subject" />
-                </div>
-                <div class="col-12">
-                  <textarea name="message" id="message" placeholder="Message"></textarea>
-                </div>
-                <div class="col-12">
-                  <ul class="actions">
-                    <li><button type="submit">Send Message</button></li>
-                    <li><button type="reset" class="alt">Clear Form</button></li>
-                  </ul>
-                </div>
-              </div>
-            </form>
+        <form id="contact-form">
+          <div class="row">
+            <div class="col-6 col-12-small">
+              <label for="name">Name*:</label>
+              <input type="text" name="name" id="name" required />
+            </div>
+            <div class="col-6 col-12-small">
+              <label for="email">Email*:</label>
+              <input
+                type="text"
+                name="email"
+                id="email"
+                required
+                pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)+$"
+                title="user@emaildomain.com"
+              />
+            </div>
+            <div class="col-12">
+              <label for="subject">Subject:</label>
+              <input type="text" name="subject" id="subject" />
+            </div>
+            <div class="col-12">
+              <label for="message">Message*:</label>
+              <textarea name="message" id="message" required></textarea>
+            </div>
+            <div class="col-12">
+              <ul class="actions">
+                <li><button type="submit" id="submit-button">Send Message</button></li>
+                <li><button type="reset" class="alt">Clear Form</button></li>
+              </ul>
+            </div>
           </div>
-          <div class="col-12">
-            <hr />
-            <h3 id="social">Find me on ...</h3>
-            <social-buttons></social-buttons>
-            <hr />
-          </div>
+        </form>
+        <div class="col-12">
+          <hr />
+          <h3 id="social">Find me on...</h3>
+          <social-buttons></social-buttons>
+          <hr />
         </div>
         <footer>
           <ul id="copyright">
@@ -144,6 +155,7 @@
 
     <!-- Scripts -->
     <script src="assets/js/smooth-scroll.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="src/js/main.mjs" type="module"></script>
   </body>
 </html>

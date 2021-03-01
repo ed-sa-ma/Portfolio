@@ -5,7 +5,7 @@
   "main": "-",
   "scripts": {
     "dev": "npm run watch | live-server --watch=src/**/*,index.html",
-    "scss": "sass --no-source-map src/sass/main.scss assets/css/main.css",
+    "scss": "sass --no-source-map src/sass/main.scss assets/css/main.css && cssnano assets/css/main.css assets/css/main_min.css --no-autoprefixer",
     "watch": "npm run scss && chokidar \"src/sass/**/*.scss\" -c \"npm run scss\""
   },
   "repository": {
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/ed-sa-ma/Portfolio#readme",
   "devDependencies": {
     "chokidar-cli": "^2.1.0",
+    "cssnano-cli": "^1.0.5",
     "live-server": "^1.2.1",
     "sass": "^1.32.2"
   }
