@@ -9,3 +9,10 @@ node_modules/
 
 # Logs for yarn
 yarn-error.log
+
+# Netlify configs for local dev
+netlify_tokens.md
+netlify.toml
+
+# REST API test files for VSCode
+requests/
