@@ -13,7 +13,7 @@ import ProjectGrid from "./ProjectGrid.mjs";
 import ReviewList from "./ReviewList.mjs";
 import SocialButtons from "./SocialButtons.mjs";
 
-const DEFAULT_MAIL_SUBJECT = "Portfolio contact form email";
+const API_PATH = "/.netlify/functions";
 
 // Register custom-elements.
 customElements.define("skill-grid", SkillGrid);
@@ -45,28 +45,34 @@ function handleOnClickSubmit(event) {
 
   let name = nameInput.value;
   let email = emailInput.value;
-  let subject = subjectInput.value || DEFAULT_MAIL_SUBJECT;
+  let subject = subjectInput.value || "";
   let message = messageInput.value;
 
   let hasConfirmed = confirm("Do you confirm you want to send me the message?");
 
   if (hasConfirmed) {
-    Email.send({
-      SecureToken: "fb72ed97-b47a-4684-9634-8621859f3b59",
-      To: "ed.sanz.martin@gmail.com",
-      From: `${name} <${email}>`,
-      Subject: subject,
-      Body: message
-    })
-      .then((message) => {
-        alert(`Email send result: ${message}`);
-        console.log(`Email send result: ${message}`);
-      })
-      .catch((error) => {
-        alert(`Error sending email: ${error}`);
-        console.log(`Error sending email: ${error}`);
-      });
+    let formContainer = contactForm.parentElement;
 
+    formContainer.classList.remove("error");
+    formContainer.classList.add("loading");
+
+    fetch(`${API_PATH}/send-email`, {
+      method: "POST",
+      body: JSON.stringify({
+        name,
+        replyTo: email,
+        subject,
+        message
+      })
+    }).then(function handleFullfilment(response) {
+      formContainer.classList.remove("loading");
+
+      if (response.status === 204) {
+        formContainer.classList.add("message-sent");
+      } else {
+        formContainer.classList.add("error");
+      }
+    });
   }
 }
 

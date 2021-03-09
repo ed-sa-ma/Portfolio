@@ -10,7 +10,7 @@ const OAUTH2_CLIENT_ID = process.env.OAUTH2_CLIENT_ID || "";
 const OAUTH2_CLIENT_SECRET = process.env.OAUTH2_CLIENT_SECRET || "";
 const OAUTH2_REFRESH_TOKEN = process.env.OAUTH2_REFRESH_TOKEN || "";
 const DESTINATION_EMAIL = "ed.sanz.martin@gmail.com";
-const DEFAULT_SUBJECT = "✉️ → 👨🏽‍💻 → 💵";
+const DEFAULT_SUBJECT = "✉️ ➡️ 👨🏽‍💻 ➡️ 💵";
 
 /**
  * OAuth2 authentication, we fetch a new accessToken using our refresh token.
@@ -49,7 +49,7 @@ function parseRequestBody(jsonBody) {
     return null;
   }
 
-  return { message, name, replyTo, subject };
+  return { message, name, replyTo, subject: subject || DEFAULT_SUBJECT };
 }
 
 /**
