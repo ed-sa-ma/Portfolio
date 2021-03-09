@@ -105,44 +105,54 @@
           <h2>Have me make stuff for you.</h2>
           <p>Ornare nulla proin odio consequat sapien vestibulum ipsum.</p>
         </header>
-        <form id="contact-form">
-          <div class="row">
-            <div class="col-6 col-12-small">
-              <label for="name">Name*:</label>
-              <input type="text" name="name" id="name" required />
-            </div>
-            <div class="col-6 col-12-small">
-              <label for="email">Email*:</label>
-              <input
-                type="text"
-                name="email"
-                id="email"
-                required
-                pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)+$"
-                title="user@emaildomain.com"
-              />
-            </div>
-            <div class="col-12">
-              <label for="subject">Subject:</label>
-              <input type="text" name="subject" id="subject" />
-            </div>
-            <div class="col-12">
-              <label for="message">Message*:</label>
-              <textarea name="message" id="message" required></textarea>
-            </div>
-            <div class="col-12">
-              <ul class="actions">
-                <li><button type="submit" id="submit-button">Send Message</button></li>
-                <li><button type="reset" class="alt">Clear Form</button></li>
-              </ul>
-            </div>
+        <div class="form-container">
+          <div class="gratitude-message">
+            <h3>Thanks for your message!</h3>
           </div>
-        </form>
+          <form id="contact-form">
+            <div class="row">
+              <div class="col-6 col-12-small">
+                <label for="name">Name*:</label>
+                <input type="text" name="name" id="name" required />
+              </div>
+              <div class="col-6 col-12-small">
+                <label for="email">Email*:</label>
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  required
+                  pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)+$"
+                  title="user@emaildomain.com"
+                />
+              </div>
+              <div class="col-12">
+                <label for="subject">Subject:</label>
+                <input type="text" name="subject" id="subject" />
+              </div>
+              <div class="col-12">
+                <label for="message">Message*:</label>
+                <textarea name="message" id="message" required></textarea>
+              </div>
+              <div class="col-12">
+                <ul class="actions">
+                  <li><button type="submit" id="submit-button">Send Message</button></li>
+                  <li><button type="reset" class="alt">Clear Form</button></li>
+                </ul>
+              </div>
+            </div>
+          </form>
+          <div class="loader-container">
+            <div class="ball first"></div>
+            <div class="ball second"></div>
+            <div class="ball third"></div>
+          </div>
+          <i class="error-message">Something went wrong sending your message! Please let me know using the social media links below</i>
+        </div>
         <div class="col-12">
           <hr />
           <h3 id="social">Find me on...</h3>
           <social-buttons></social-buttons>
-          <hr />
         </div>
         <footer>
           <ul id="copyright">
@@ -155,7 +165,6 @@
 
     <!-- Scripts -->
     <script src="assets/js/smooth-scroll.min.js"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="src/js/main.mjs" type="module"></script>
   </body>
 </html>
