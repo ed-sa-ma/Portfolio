@@ -384,68 +384,157 @@ footer {
 
 /* Form */
 
-form {
-  label {
-    color: $main-white;
-    font-weight: 700;
-    display: block;
-    text-align: start;
-    margin: 0 0 0.5em 0;
+.form-container {
+  $fade-transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+
+  position: relative;
+
+  form {
+    position: relative;
+
+    transition: $fade-transition, visibility 0s step-end 0.5s;
+
+    label {
+      color: $main-white;
+      font-weight: 700;
+      display: block;
+      text-align: start;
+      margin: 0 0 0.5em 0;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select,
+    textarea {
+      @include vendor("transition", ("background .2s ease-in-out", "box-shadow .2s ease-in-out"));
+      -webkit-appearance: none;
+      display: block;
+      padding: 0.75em;
+      font-size: 1em;
+      border-radius: 8px;
+      background-color: $main-black;
+      border: none;
+      color: #bbb;
+      box-shadow: inset 0px 2px 3px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025);
+      width: 100%;
+
+      &:focus {
+        background-color: $focus-black;
+        box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025), inset 0px 0px 2px 1px $active-blue;
+        outline: none;
+      }
+
+      // Small hack to style inputs when navigator's autocomplete is chosen.
+      &:-webkit-autofill,
+      &:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0px 1000px $focus-black inset;
+        box-shadow: 0 0 0px 1000px $focus-black inset;
+        -webkit-text-fill-color: $main-white;
+        caret-color: $main-white;
+        border: 1px solid $main-blue;
+      }
+
+      &.already-focused:not(:focus):invalid {
+        box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025), inset 0px 0px 2px 1px $main-red;
+        outline: none;
+      }
+    }
+
+    textarea {
+      height: 15em;
+    }
+
+    .actions {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    ::-moz-focus-inner {
+      border: 0;
+    }
   }
 
-  input[type="text"],
-  input[type="email"],
-  input[type="password"],
-  select,
-  textarea {
-    @include vendor("transition", ("background .2s ease-in-out", "box-shadow .2s ease-in-out"));
-    -webkit-appearance: none;
-    display: block;
-    padding: 0.75em;
-    font-size: 1em;
-    border-radius: 8px;
-    background-color: $main-black;
-    border: none;
-    color: #bbb;
-    box-shadow: inset 0px 2px 3px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025);
+  .gratitude-message {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
     width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: $fade-transition;
+  }
 
-    &:focus {
-      background-color: $focus-black;
-      box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025), inset 0px 0px 2px 1px $active-blue;
-      outline: none;
+  .loader-container {
+    $ball-size: 4px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: none;
+    width: 100%;
+    height: 100%;
+
+    .ball {
+      width: $ball-size;
+      height: $ball-size;
+      border-radius: 50%;
+      background-color: $main-white;
+      animation: 1s ease-in-out 0s infinite alternate none running grow;
+
+      &.second {
+        animation-delay: 0.3s;
+      }
+
+      &.third {
+        animation-delay: 0.6s;
+      }
     }
 
-    // Small hack to style inputs when navigator's autocomplete is chosen.
-    &:-webkit-autofill,
-    &:-webkit-autofill:focus {
-      -webkit-box-shadow: 0 0 0px 1000px $focus-black inset;
-      box-shadow: 0 0 0px 1000px $focus-black inset;
-      -webkit-text-fill-color: $main-white;
-      caret-color: $main-white;
-      border: 1px solid $main-blue;
-    }
-
-    &.already-focused:not(:focus):invalid {
-      box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025), inset 0px 0px 2px 1px $main-red;
-      outline: none;
+    .ball + .ball {
+      margin-left: $ball-size * 3;
     }
   }
 
-  textarea {
-    height: 15em;
-  }
-
-  .actions {
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  ::-moz-focus-inner {
-    border: 0;
+  .error-message {
+    display: none;
+    color: $main-red;
+    margin-top: 1em;
   }
 }
+
+.form-container.message-sent {
+  form {
+    opacity: 0;
+    transform: scale(0.8);
+    visibility: hidden;
+  }
+
+  .gratitude-message {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.form-container.loading {
+  form {
+    filter: blur(5px);
+  }
+
+  .loader-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 /* Section/Article */
 
 section,
@@ -458,6 +547,12 @@ article > :last-child,
 section:last-child,
 article:last-child {
   margin-bottom: 0;
+}
+
+.form-container.error {
+  .error-message {
+    display: inherit;
+  }
 }
 
 /* Image */
@@ -1151,7 +1246,7 @@ body > article {
 
   #contact {
     footer {
-      margin: 0;
+      margin: 1em 0 0 0;
     }
   }
 
@@ -1172,5 +1267,14 @@ body > article {
         margin-top: 0;
       }
     }
+  }
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(3);
   }
 }
