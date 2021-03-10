@@ -7,6 +7,14 @@ export default [
     Eduardo is a very hard-working developer, and I have can say that I have rarely met anyone as diligent, eager and disciplined as him in my 15+ years of industry experience. If he keeps going and learning at this pace, he has a bright future as a highly skilled developer and potential architect or team lead ahead of him. I really enjoyed working with Eduardo and think he is a valuable asset to any team.`
   },
   {
+    reviewer: "Ioannis Makris",
+    profileLink: "https://www.linkedin.com/in/ioannis-makris/",
+    charge: "Google Cloud Architect | Associate Manager - Google Practice at Accenture",
+    text: `Eduardo stands out as one of the most talented and diligent software engineers with whom I have had the opportunity of working. I have managed Eduardo for half a year on a project on which he was working as a frontend engineer. Throughout this time, I was particularly impressed at the efficiency at which he could deliver high-quality code while fulfilling the business requirements and also implementing best-practices. His key achievement on the project was the delivery of a high-quality ReactJS frontend from scratch.
+    
+    His calm personality enables him to complete even the most difficult tasks to a high standard and with confidence. Eduardo did not shy away from sharing his views on how our product and workflows could be improved and this has enabled him to grow in his role and become a trusted advisor for our team. I am lucky to have had the opportunity to not only work with Eduardo but also learn from him. Eduardo would be an asset to any team, and I hope that I will get the chance to work with him on a future project.`
+  },
+  {
     reviewer: "Marcel Kiczynski",
     profileLink: "https://www.linkedin.com/in/marcel-kiczynski-7488a7168/",
     charge: "IT Delivery Lead bei E.ON Digital Technology",
@@ -15,14 +23,6 @@ export default [
     In addition to his technical skills, he is a very good team player and was a valued member of the team.
     Thank you Eduardo for the great cooperation. Whenever you are around the door is always open.
     All the best.`
-  },
-  {
-    reviewer: "Ioannis Makris",
-    profileLink: "https://www.linkedin.com/in/ioannis-makris/",
-    charge: "Google Cloud Architect | Associate Manager - Google Practice at Accenture",
-    text: `Eduardo stands out as one of the most talented and diligent software engineers with whom I have had the opportunity of working. I have managed Eduardo for half a year on a project on which he was working as a frontend engineer. Throughout this time, I was particularly impressed at the efficiency at which he could deliver high-quality code while fulfilling the business requirements and also implementing best-practices. His key achievement on the project was the delivery of a high-quality ReactJS frontend from scratch.
-
-      His calm personality enables him to complete even the most difficult tasks to a high standard and with confidence. Eduardo did not shy away from sharing his views on how our product and workflows could be improved and this has enabled him to grow in his role and become a trusted advisor for our team. I am lucky to have had the opportunity to not only work with Eduardo but also learn from him. Eduardo would be an asset to any team, and I hope that I will get the chance to work with him on a future project.`
   },
   {
     reviewer: "Alyssia Gordon",

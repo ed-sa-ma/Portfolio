@@ -43,7 +43,7 @@ export default class SkillGrid extends HTMLElement {
       headline.innerText = skill.title;
 
       let paragraph = section.appendChild(document.createElement("p"));
-      paragraph.innerText = skill.description;
+      paragraph.innerHTML = skill.description;
     }
 
     this.innerHTML = "";
