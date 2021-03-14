@@ -9,11 +9,10 @@ export default [
   },
   {
     title: "Collaboration tool full-stack",
-    link: "https://excalidraw.com/#json=4811329294565376,9VzACSnYk9-NngsEmg2EUQ",
+    link: "/diagram",
     image: "assets/images/Excalidraw_diagram.png",
     description:
       'In this tool the front-end framework was React plus <a href="https://material-ui.com/" target="_blank" rel="noopener noreferer">Material UI</a> as component library and the back end was implemented using <a href="https://cloud.google.com/" target="_blank" rel="noopener noreferer">Google Cloud</a> services like Firebase (Back-end architecture diagram inside).',
-    alt: "excalidraw diagram miniature",
-    openInNewTab: true
+    alt: "excalidraw diagram miniature"
   }
 ];
