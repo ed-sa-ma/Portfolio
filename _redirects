@@ -13,3 +13,6 @@
 
 /gift https://ed-sa-ma-gift.netlify.app/ 200
 /gift-assets/* https://ed-sa-ma-gift.netlify.app/gift-assets/:splat 200
+
+/diagram https://ed-sa-ma-diagram.netlify.app/ 200
+/diagram-assets/* https://ed-sa-ma-diagram.netlify.app/diagram-assets/:splat 200
