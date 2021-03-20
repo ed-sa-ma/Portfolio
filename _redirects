@@ -16,3 +16,10 @@
 
 /diagram https://ed-sa-ma-diagram.netlify.app/ 200
 /diagram-assets/* https://ed-sa-ma-diagram.netlify.app/diagram-assets/:splat 200
+
+/workload https://ed-sa-ma-workload.netlify.app/ 200
+/workload-assets/* https://ed-sa-ma-workload.netlify.app/workload-assets/:splat 200
+
+/api/workload https://ed-sa-ma-workload.netlify.app/.netlify/functions/workload/:splat 200
+
+/api/send-email /.netlify/functions/send-email 200

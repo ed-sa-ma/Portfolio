@@ -13,7 +13,7 @@ import ProjectGrid from "./ProjectGrid.mjs";
 import ReviewList from "./ReviewList.mjs";
 import SocialButtons from "./SocialButtons.mjs";
 
-const API_PATH = "/.netlify/functions";
+const API_PATH = "/api";
 
 // Register custom-elements.
 customElements.define("skill-grid", SkillGrid);
@@ -41,7 +41,12 @@ let formInputs = contactForm.querySelectorAll("[id]:not(button)");
 function handleOnClickSubmit(event) {
   event.preventDefault();
 
-  let { name: nameInput, email: emailInput, subject: subjectInput, message: messageInput } = event.target.elements;
+  let {
+    name: nameInput,
+    email: emailInput,
+    subject: subjectInput,
+    message: messageInput
+  } = event.target.elements;
 
   let name = nameInput.value;
   let email = emailInput.value;
