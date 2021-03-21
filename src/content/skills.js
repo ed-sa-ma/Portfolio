@@ -12,7 +12,7 @@ export default [
   {
     title: "Passionate about JavaScript fundamentals",
     description:
-      'I aim to have a good knowledge of the programming language I mostly use as developer. I consider my handbook for this <i><a href="https://github.com/getify/You-Dont-Know-JS/tree/1st-ed#you-dont-know-js-book-series---1st-edition" rel="noopener noreferer" target="_blank">You Don\'t Know JS</a></i> book series by <a href="https://www.linkedin.com/in/getify/" rel="noopener noreferer" target="_blank">Kyle Simpson</a>.',
+      'I aim to have a good knowledge of the programming language I mostly use as a developer. I consider my handbook for this <i><a href="https://github.com/getify/You-Dont-Know-JS/tree/1st-ed#you-dont-know-js-book-series---1st-edition" rel="noopener noreferer" target="_blank">You Don\'t Know JS</a></i> book series by <a href="https://www.linkedin.com/in/getify/" rel="noopener noreferer" target="_blank">Kyle Simpson</a>.',
     svgIcon: javaScriptSvg
   },
   {
