@@ -4,7 +4,7 @@ export default [
     link: "/gift",
     image: "assets/images/Svelte_site.png",
     description:
-      'This is a small photo presentation web app I made for the 31st birthday of my brother. I took the chance to try <a href="https://svelte.dev/" target="_blank" rel="noopener noreferer">Svelte</a> as a front-end framework for the first time.',
+      'This is a small photo presentation web app I made for the 31st birthday of my brother. I took the chance to try <a href="https://svelte.dev/" target="_blank" rel="noopener noreferer">Svelte</a> as front-end framework for the first time.',
     alt: "photo presentation miniatue"
   },
   {
