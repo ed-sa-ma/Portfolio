@@ -8,6 +8,14 @@ export default [
     alt: "photo presentation miniatue"
   },
   {
+    title: "Workload monitoring app",
+    link: "/workload",
+    image: "assets/images/Monitor_app.png",
+    description:
+      'Sample application monitoring CPU\'s worload. The original implementatio included a small server along with the front end, made with <a href="https://reactjs.org/" rel="noopener no referer" target="_blank">React</a>. Here that server has been replaced by a lambda function.',
+    alt: "monitor app miniatue"
+  },
+  {
     title: "Collaboration tool full-stack",
     link: "/diagram",
     image: "assets/images/Excalidraw_diagram.png",
