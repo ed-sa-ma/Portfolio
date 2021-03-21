@@ -13,7 +13,7 @@ export default [
     image: "assets/images/Monitor_app.png",
     description:
       'Sample application monitoring CPU\'s workload. The original implementation included a small server along with the front end, made with <a href="https://reactjs.org/" rel="noopener no referer" target="_blank">React</a>. Here that server has been replaced by a lambda function.',
-    alt: "monitor app miniatue"
+    alt: "monitor app miniature"
   },
   {
     title: "Collaboration tool full-stack",
