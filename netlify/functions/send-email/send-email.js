@@ -1,32 +1,12 @@
 const nodemailer = require("nodemailer");
-const {
-  google: {
-    auth: { OAuth2 }
-  }
-} = require("googleapis");
 
 const GMAIL_USER = process.env.GMAIL_USER || "";
 const OAUTH2_CLIENT_ID = process.env.OAUTH2_CLIENT_ID || "";
 const OAUTH2_CLIENT_SECRET = process.env.OAUTH2_CLIENT_SECRET || "";
 const OAUTH2_REFRESH_TOKEN = process.env.OAUTH2_REFRESH_TOKEN || "";
+const OAUTH2_ACCESS_TOKEN = process.env.OAUTH2_ACCESS_TOKEN || "";
 const DESTINATION_EMAIL = "ed.sanz.martin@gmail.com";
 const DEFAULT_SUBJECT = "✉️ ➡️ 👨🏽‍💻 ➡️ 💵";
-
-/**
- * OAuth2 authentication, we fetch a new accessToken using our refresh token.
- * Code inspired by => https://alexb72.medium.com/how-to-send-emails-using-a-nodemailer-gmail-and-oauth2-fe19d66451f9
- *
- * @return {Promise<string>}
- */
-async function fetchAccessToken() {
-  let oauth2Client = new OAuth2(OAUTH2_CLIENT_ID, OAUTH2_CLIENT_SECRET);
-
-  oauth2Client.setCredentials({ refresh_token: OAUTH2_REFRESH_TOKEN });
-  let tokenObject = await oauth2Client.getAccessToken();
-  let { token: accessToken } = tokenObject;
-
-  return accessToken;
-}
 
 /**
  * @typedef {Object} BodyParams
@@ -60,10 +40,9 @@ function parseRequestBody(jsonBody) {
 
 /**
  * @param {BodyParams} requestParams
- * @param {string} accessToken
  * @return {Nodemailer}
  */
-function configureNodemailer(requestParams, accessToken) {
+function configureNodemailer(requestParams) {
   let { name, subject, replyTo, message } = requestParams;
 
   let transporter = nodemailer.createTransport({
@@ -74,7 +53,8 @@ function configureNodemailer(requestParams, accessToken) {
       user: GMAIL_USER,
       clientId: OAUTH2_CLIENT_ID,
       clientSecret: OAUTH2_CLIENT_SECRET,
-      accessToken
+      refreshToken: OAUTH2_REFRESH_TOKEN,
+      accessToken: OAUTH2_ACCESS_TOKEN
     }
   });
 
@@ -113,8 +93,7 @@ exports.handler = async function sendMessage(event) {
       };
     }
 
-    let accessToken = await fetchAccessToken();
-    var { transporter, mail } = configureNodemailer(requestParams, accessToken);
+    var { transporter, mail } = configureNodemailer(requestParams);
   } catch (error) {
     return {
       statusCode: 500,

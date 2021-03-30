@@ -28,6 +28,12 @@ export default [
     svgIcon: githubSvg
   },
   {
+    media: "CodePen",
+    link: "https://codepen.io/ed-sa-ma",
+    linkClass: "codepen-button",
+    svgIcon: codePenSvg
+  },
+  {
     media: "Leetcode",
     link: "https://leetcode.com/ed_sa_ma/",
     linkClass: "leetcode-button",
@@ -38,12 +44,6 @@ export default [
     link: "https://www.codewars.com/users/ed-sa-ma",
     linkClass: "codewars-button",
     svgIcon: codeWarsSvg
-  },
-  {
-    media: "CodePen",
-    link: "https://codepen.io/ed-sa-ma",
-    linkClass: "codepen-button",
-    svgIcon: codePenSvg
   },
   {
     media: "CV",
