@@ -416,12 +416,14 @@ footer {
       background-color: $main-black;
       border: none;
       color: #bbb;
-      box-shadow: inset 0px 2px 3px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025);
+      box-shadow: inset 0px 2px 3px 1px rgba(0, 0, 0, 0.05),
+        0px 1px 0px 0px rgba(255, 255, 255, 0.025);
       width: 100%;
 
       &:focus {
         background-color: $focus-black;
-        box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025), inset 0px 0px 2px 1px $active-blue;
+        box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.05),
+          0px 1px 0px 0px rgba(255, 255, 255, 0.025), inset 0px 0px 2px 1px $active-blue;
         outline: none;
       }
 
@@ -436,7 +438,8 @@ footer {
       }
 
       &.already-focused:not(:focus):invalid {
-        box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025), inset 0px 0px 2px 1px $main-red;
+        box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.05),
+          0px 1px 0px 0px rgba(255, 255, 255, 0.025), inset 0px 0px 2px 1px $main-red;
         outline: none;
       }
     }
@@ -923,6 +926,8 @@ body > article {
 #top {
   padding: 10em 0 10em 0;
   text-align: left;
+  background-color: #db4f48;
+  color: #ffffff;
 
   .image {
     border-radius: 100%;
@@ -937,6 +942,11 @@ body > article {
 
   h1 {
     margin-top: 0.35em;
+    color: #ffffff;
+  }
+
+  strong {
+    color: #ffffff;
   }
 
   p {
