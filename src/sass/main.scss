@@ -924,10 +924,18 @@ body > article {
 /* Top */
 
 #top {
+  position: relative;
+
   padding: 10em 0 10em 0;
   text-align: left;
-  background-color: #db4f48;
   color: #ffffff;
+  text-shadow: 1px 1px 2px black, 1px -1px 2px black, -1px 1px 2px black, -1px -1px 2px black;
+  overflow-x: hidden;
+  max-width: 100vw;
+
+  & > * {
+    position: relative;
+  }
 
   .image {
     border-radius: 100%;
@@ -956,6 +964,31 @@ body > article {
     a {
       color: inherit;
     }
+  }
+
+  .button {
+    background-color: white;
+    color: black;
+  }
+
+  &::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 800%;
+    height: 100%;
+    content: "This text is not visible and is put here to solve a bug in the gradient for Chromium browsers";
+    color: transparent;
+    text-shadow: none;
+    background: linear-gradient(
+      0.25turn,
+      #db4f48 0% 12.5%,
+      gold 25% 37.5%,
+      darkcyan 50% 62.5%,
+      #5b219e 75% 100%
+    );
+    animation: 15s linear 0s infinite alternate slide;
   }
 }
 
@@ -1286,5 +1319,33 @@ body > article {
   }
   100% {
     transform: scale(3);
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(0);
+  }
+  30% {
+    transform: translateX(-25%);
+  }
+  40% {
+    transform: translateX(-25%);
+  }
+  60% {
+    transform: translateX(-50%);
+  }
+  70% {
+    transform: translateX(-50%);
+  }
+  90% {
+    transform: translateX(-75%);
+  }
+  100% {
+    transform: translateX(-75%);
+    // transform: translateX(calc(100% - 100vw));
   }
 }
