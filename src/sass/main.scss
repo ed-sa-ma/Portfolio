@@ -15,6 +15,7 @@ $hover-blue: #16878d;
 $active-blue: #11656a;
 
 $main-red: #e76969;
+$main-red-dark: #af1d1d;
 
 $main-black: #282828;
 $focus-black: #252525;
@@ -926,7 +927,7 @@ body > article {
 #top {
   padding: 10em 0 10em 0;
   text-align: left;
-  background-color: #db4f48;
+  background-image: linear-gradient($main-red, $main-red-dark);
   color: #ffffff;
 
   .image {
