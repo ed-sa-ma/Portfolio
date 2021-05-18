@@ -37,51 +37,30 @@ socialButtonsElement.setAttribute("data", JSON.stringify(social));
 let contactForm = document.querySelector("#contact-form");
 let formInputs = contactForm.querySelectorAll("[id]:not(button)");
 
-// Handle email sending from contact form.
-function handleOnClickSubmit(event) {
+contactForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  let {
-    name: nameInput,
-    email: emailInput,
-    subject: subjectInput,
-    message: messageInput
-  } = event.target.elements;
+  let formContainer = contactForm.parentElement;
+  let formData = new FormData(contactForm);
 
-  let name = nameInput.value;
-  let email = emailInput.value;
-  let subject = subjectInput.value || "";
-  let message = messageInput.value;
+  formContainer.classList.add("loading");
+  formContainer.classList.remove("error");
 
-  let hasConfirmed = confirm("Do you confirm you want to send me the message?");
-
-  if (hasConfirmed) {
-    let formContainer = contactForm.parentElement;
-
-    formContainer.classList.remove("error");
-    formContainer.classList.add("loading");
-
-    fetch(`${API_PATH}/send-email`, {
-      method: "POST",
-      body: JSON.stringify({
-        name,
-        replyTo: email,
-        subject,
-        message
-      })
-    }).then(function handleFullfilment(response) {
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString()
+  })
+    .then(() => {
       formContainer.classList.remove("loading");
-
-      if (response.status === 204) {
-        formContainer.classList.add("message-sent");
-      } else {
-        formContainer.classList.add("error");
-      }
+      formContainer.classList.add("message-sent");
+    })
+    .catch((error) => {
+      console.error(error);
+      formContainer.classList.remove("loading");
+      formContainer.classList.add("error");
     });
-  }
-}
-
-contactForm.addEventListener("submit", handleOnClickSubmit);
+});
 
 // Add class once one of the input is focused to show invalid state.
 function handleFirstFocus(event) {
