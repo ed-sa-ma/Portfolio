@@ -37,6 +37,31 @@ socialButtonsElement.setAttribute("data", JSON.stringify(social));
 let contactForm = document.querySelector("#contact-form");
 let formInputs = contactForm.querySelectorAll("[id]:not(button)");
 
+contactForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  let formContainer = contactForm.parentElement;
+  let formData = new FormData(contactForm);
+
+  formContainer.classList.add("loading");
+  formContainer.classList.remove("error");
+
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString()
+  })
+    .then(() => {
+      formContainer.classList.remove("loading");
+      formContainer.classList.add("message-sent");
+    })
+    .catch((error) => {
+      console.error(error);
+      formContainer.classList.remove("loading");
+      formContainer.classList.add("error");
+    });
+});
+
 // Add class once one of the input is focused to show invalid state.
 function handleFirstFocus(event) {
   let inputElement = event.target;
