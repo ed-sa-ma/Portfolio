@@ -37,52 +37,6 @@ socialButtonsElement.setAttribute("data", JSON.stringify(social));
 let contactForm = document.querySelector("#contact-form");
 let formInputs = contactForm.querySelectorAll("[id]:not(button)");
 
-// Handle email sending from contact form.
-function handleOnClickSubmit(event) {
-  event.preventDefault();
-
-  let {
-    name: nameInput,
-    email: emailInput,
-    subject: subjectInput,
-    message: messageInput
-  } = event.target.elements;
-
-  let name = nameInput.value;
-  let email = emailInput.value;
-  let subject = subjectInput.value || "";
-  let message = messageInput.value;
-
-  let hasConfirmed = confirm("Do you confirm you want to send me the message?");
-
-  if (hasConfirmed) {
-    let formContainer = contactForm.parentElement;
-
-    formContainer.classList.remove("error");
-    formContainer.classList.add("loading");
-
-    fetch(`${API_PATH}/send-email`, {
-      method: "POST",
-      body: JSON.stringify({
-        name,
-        replyTo: email,
-        subject,
-        message
-      })
-    }).then(function handleFullfilment(response) {
-      formContainer.classList.remove("loading");
-
-      if (response.status === 204) {
-        formContainer.classList.add("message-sent");
-      } else {
-        formContainer.classList.add("error");
-      }
-    });
-  }
-}
-
-contactForm.addEventListener("submit", handleOnClickSubmit);
-
 // Add class once one of the input is focused to show invalid state.
 function handleFirstFocus(event) {
   let inputElement = event.target;
