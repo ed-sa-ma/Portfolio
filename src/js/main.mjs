@@ -13,8 +13,6 @@ import ProjectGrid from "./ProjectGrid.mjs";
 import ReviewList from "./ReviewList.mjs";
 import SocialButtons from "./SocialButtons.mjs";
 
-const API_PATH = "/api";
-
 // Register custom-elements.
 customElements.define("skill-grid", SkillGrid);
 customElements.define("review-list", ReviewList);
