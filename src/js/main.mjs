@@ -83,9 +83,9 @@ contactForm.addEventListener("submit", function (event) {
   if (isValid) openDialog();
 });
 
-sendButton.addEventListener("click", function handleClick() {
+sendButton.addEventListener("click", async function handleClick() {
   closeDialog();
-  sendMessage();
+  await sendMessage();
 });
 
 cancelButton.addEventListener("click", closeDialog);
