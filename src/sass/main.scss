@@ -512,6 +512,26 @@ footer {
     color: $main-red;
     margin-top: 1em;
   }
+
+  .confirm-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+
+    background: rgb(56 56 56 / 70%);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    animation: appear 0.3s linear;
+
+    .dialog-container {
+      padding: 1rem 2rem;
+      background-color: $main-white;
+    }
+  }
 }
 
 .form-container.message-sent {
@@ -536,6 +556,14 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+}
+
+html.open-dialog {
+  overflow-y: hidden;
+
+  .confirm-dialog {
+    display: flex;
   }
 }
 
@@ -1287,5 +1315,14 @@ body > article {
   }
   100% {
     transform: scale(3);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

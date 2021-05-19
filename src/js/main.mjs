@@ -34,31 +34,61 @@ socialButtonsElement.setAttribute("data", JSON.stringify(social));
 
 let contactForm = document.querySelector("#contact-form");
 let formInputs = contactForm.querySelectorAll("[id]:not(button)");
+let sendButton = document.querySelector("#send-button");
+let cancelButton = document.querySelector("#cancel-button");
 
-contactForm.addEventListener("submit", function (event) {
-  event.preventDefault();
+async function handleKeyDown(event) {
+  if (event.key === "Escape" || event.key === "Enter") closeDialog();
+  if (event.key === "Enter") await sendMessage();
+}
 
-  let formContainer = contactForm.parentElement;
+async function sendMessage() {
   let formData = new FormData(contactForm);
+  let formContainer = contactForm.parentElement;
 
   formContainer.classList.add("loading");
   formContainer.classList.remove("error");
 
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(formData).toString()
-  })
-    .then(() => {
-      formContainer.classList.remove("loading");
-      formContainer.classList.add("message-sent");
-    })
-    .catch((error) => {
-      console.error(error);
-      formContainer.classList.remove("loading");
-      formContainer.classList.add("error");
+  try {
+    await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString()
     });
+
+    formContainer.classList.remove("loading");
+    formContainer.classList.add("message-sent");
+  } catch (error) {
+    console.error(error);
+    formContainer.classList.remove("loading");
+    formContainer.classList.add("error");
+  }
+}
+
+function openDialog() {
+  document.firstElementChild.classList.add("open-dialog");
+  document.addEventListener("keydown", handleKeyDown);
+}
+
+function closeDialog() {
+  document.firstElementChild.classList.remove("open-dialog");
+  document.removeEventListener("keydown", handleKeyDown);
+}
+
+// Submit form to Netlify: https://docs.netlify.com/forms/setup/#submit-html-forms-with-ajax
+contactForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  let isValid = contactForm.reportValidity();
+
+  if (isValid) openDialog();
 });
+
+sendButton.addEventListener("click", function handleClick() {
+  closeDialog();
+  sendMessage();
+});
+
+cancelButton.addEventListener("click", closeDialog);
 
 // Add class once one of the input is focused to show invalid state.
 function handleFirstFocus(event) {
