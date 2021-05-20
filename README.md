@@ -25,6 +25,8 @@ Additionally all this Javascript is served using [ES modules](https://developer.
 
 ### Hosted by [Netlify](https://netlify.com/)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c3a3be83-7f43-416f-a91b-9524df383921/deploy-status)](https://app.netlify.com/sites/ed-sa-ma/deploys)
+
 ---
 
 ### Icons by [font-awesome](https://fontawesome.com/)

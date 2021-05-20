@@ -142,7 +142,7 @@
           <div class="gratitude-message">
             <h3>Thanks for your message!</h3>
           </div>
-          <form id="contact-form">
+          <form id="contact-form" name="contact-form" netlify>
             <div class="row">
               <div class="col-6 col-12-small">
                 <label for="name">Name*:</label>
@@ -169,8 +169,23 @@
               </div>
               <div class="col-12">
                 <ul class="actions">
-                  <li><button type="submit" id="submit-button">Send Message</button></li>
+                  <li>
+                    <button type="submit">Send Message</button>
+                  </li>
                   <li><button type="reset" class="alt">Clear Form</button></li>
+                </ul>
+              </div>
+            </div>
+            <div class="confirm-dialog">
+              <div class="dialog-container wrapper style2">
+                <p>Are you sure you want to send the message?</p>
+                <ul class="actions">
+                  <li>
+                    <button type="button" id="send-button">Confirm</button>
+                  </li>
+                  <li>
+                    <button type="button" id="cancel-button" class="alt">Cancel</button>
+                  </li>
                 </ul>
               </div>
             </div>

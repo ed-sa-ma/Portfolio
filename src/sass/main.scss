@@ -493,6 +493,15 @@ footer {
       background-color: $main-white;
       animation: 1s ease-in-out 0s infinite alternate none running grow;
 
+      @keyframes grow {
+        0% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(3);
+        }
+      }
+
       &.second {
         animation-delay: 0.3s;
       }
@@ -511,6 +520,35 @@ footer {
     display: none;
     color: $main-red;
     margin-top: 1em;
+  }
+
+  .confirm-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+
+    background: rgb(56 56 56 / 70%);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    animation: appear 0.3s linear;
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .dialog-container {
+      padding: 1rem 2rem;
+      background-color: $main-white;
+    }
   }
 }
 
@@ -536,6 +574,14 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+}
+
+body.open-dialog {
+  overflow-y: hidden;
+
+  .confirm-dialog {
+    display: flex;
   }
 }
 
@@ -1278,14 +1324,5 @@ body > article {
         margin-top: 0;
       }
     }
-  }
-}
-
-@keyframes grow {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(3);
   }
 }
