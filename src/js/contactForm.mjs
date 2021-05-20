@@ -34,12 +34,14 @@ async function handleKeyDown(event) {
 }
 
 function openDialog() {
-  document.firstElementChild.classList.add("open-dialog");
+  console.log(document.body);
+  console.log(document.body.classList);
+  document.body.classList.add("open-dialog");
   document.addEventListener("keydown", handleKeyDown);
 }
 
 function closeDialog() {
-  document.firstElementChild.classList.remove("open-dialog");
+  document.body.classList.remove("open-dialog");
   document.removeEventListener("keydown", handleKeyDown);
 }
 
