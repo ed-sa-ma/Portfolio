@@ -46,8 +46,8 @@ async function sendMessage() {
   let formData = new FormData(contactForm);
   let formContainer = contactForm.parentElement;
 
-  formContainer.classList.add("loading");
   formContainer.classList.remove("error");
+  formContainer.classList.add("loading");
 
   try {
     await fetch("/", {
