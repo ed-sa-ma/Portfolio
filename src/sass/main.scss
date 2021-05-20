@@ -493,6 +493,15 @@ footer {
       background-color: $main-white;
       animation: 1s ease-in-out 0s infinite alternate none running grow;
 
+      @keyframes grow {
+        0% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(3);
+        }
+      }
+
       &.second {
         animation-delay: 0.3s;
       }
@@ -526,6 +535,15 @@ footer {
     justify-content: center;
     align-items: center;
     animation: appear 0.3s linear;
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
 
     .dialog-container {
       padding: 1rem 2rem;
@@ -1306,23 +1324,5 @@ body > article {
         margin-top: 0;
       }
     }
-  }
-}
-
-@keyframes grow {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(3);
-  }
-}
-
-@keyframes appear {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }
