@@ -34,8 +34,6 @@ async function handleKeyDown(event) {
 }
 
 function openDialog() {
-  console.log(document.body);
-  console.log(document.body.classList);
   document.body.classList.add("open-dialog");
   document.addEventListener("keydown", handleKeyDown);
 }
