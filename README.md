@@ -1,32 +1,38 @@
-# Personal portfolio by ed-sa-ma
+# create-svelte
 
-Site implemented by [ed-sa-ma](https://twitter.com/ed_sa_ma) for professional promotion, including samples of personal projects, opinions by colleagues from previous projects, links to all social media accounts of interest or contact form.
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
 
-<br/>
-<div style="text-align: center;">
-  <img src="./assets/images/Page_screenshot.png" width="300" />
-</div>
+## Creating a project
 
-## Technical description
+If you're seeing this, you've probably already done this step. Congrats!
 
-The implementation is based in HTML, SCSS and vanilla JavaScript. In order to render repeating pieces of HTML markup like lists/grids we use [custom elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements). The idea is being able to control the content of the page with JS objects instead of directly in the markup. For this use case we don't attach shadow DOM to avoid style isolation since we store all styles in one single SCSS file.
+```bash
+# create a new project in the current directory
+npm init svelte@next
 
-Additionally all this Javascript is served using [ES modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).
+# create a new project in my-app
+npm init svelte@next my-app
+```
 
-## Credits
+> Note: the `@next` is temporary
 
-### Design from [HTML5 UP](https://html5up.net/)
+## Developing
 
----
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-### Color theme chosen with [Coolors](https://coolors.co/)
+```bash
+npm run dev
 
----
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
 
-### Hosted by [Netlify](https://netlify.com/)
+## Building
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/c3a3be83-7f43-416f-a91b-9524df383921/deploy-status)](https://app.netlify.com/sites/ed-sa-ma/deploys)
+Before creating a production version of your app, install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. Then:
 
----
+```bash
+npm run build
+```
 
-### Icons by [font-awesome](https://fontawesome.com/)
+> You can preview the built app with `npm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.

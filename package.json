@@ -1,27 +1,21 @@
 {
-  "name": "ed-sa-ma_portfolio",
-  "version": "1.0.0",
-  "description": "Personal web for professional promotion",
-  "main": "-",
+  "name": "~TODO~",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "npm run watch | live-server --watch=src/**/*,index.html",
-    "scss": "sass --no-source-map src/sass/main.scss assets/css/main.css && cssnano assets/css/main.css assets/css/main_min.css --no-autoprefixer",
-    "watch": "npm run scss && chokidar \"src/sass/**/*.scss\" -c \"npm run scss\""
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "preview": "svelte-kit preview",
+    "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
+    "format": "prettier --write --plugin-search-dir=. ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ed-sa-ma/Portfolio.git"
-  },
-  "author": "ed-sa-ma",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ed-sa-ma/Portfolio/issues"
-  },
-  "homepage": "https://github.com/ed-sa-ma/Portfolio#readme",
   "devDependencies": {
-    "chokidar-cli": "^2.1.0",
-    "cssnano-cli": "^1.0.5",
-    "live-server": "^1.2.1",
-    "sass": "^1.32.2"
-  }
+    "@sveltejs/kit": "next",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-svelte3": "^3.2.0",
+    "prettier": "~2.2.1",
+    "prettier-plugin-svelte": "^2.2.0",
+    "svelte": "^3.34.0"
+  },
+  "type": "module"
 }

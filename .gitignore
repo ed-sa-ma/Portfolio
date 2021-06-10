@@ -1,18 +1,4 @@
 .DS_Store
-
-# Generated css
-assets/css/main.css
-assets/css/main_min.css
-
-# Dependencies directory
-node_modules/
-
-# Logs for yarn
-yarn-error.log
-
-# Netlify configs for local dev
-netlify_tokens.md
-netlify.toml
-
-# REST API test files for VSCode
-requests/
+node_modules
+/.svelte-kit
+/package
