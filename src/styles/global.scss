@@ -1,0 +1,90 @@
+:root {
+	--main-blue: #13767c;
+	--hover-blue: #16878d;
+	--active-blue: #11656a;
+
+	--main-red: #e76969;
+	--main-red-dark: #af1d1d;
+
+	--main-black: #282828;
+	--focus-black: #252525;
+	--hover-black: #383838;
+	--active-black: #484848;
+
+	--main-grey: #666;
+	--bold-grey: #3e3e3e;
+
+	--main-white: #ffffff;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+}
+
+a {
+	color: var(--main-blue);
+	text-decoration: underline;
+
+	&:hover {
+		color: var(--hover-blue);
+	}
+
+	& img {
+		border: 0; /* ??? */
+	}
+}
+
+b,
+strong {
+	font-weight: 600;
+	color: var(--bold-grey);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--bold-grey);
+	margin: 0 0 0.75em 0;
+	font-weight: 700; /* Overwritten for h1 below */
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+	text-decoration: none;
+	color: inherit;
+}
+
+h1 {
+	font-size: 3.25em;
+	letter-spacing: -0.025em;
+	font-weight: 300;
+
+	strong {
+		font-weight: 700;
+	}
+}
+
+h2 {
+	font-size: 2em;
+	letter-spacing: -0.015em;
+}
+
+h3 {
+	font-size: 1.5em;
+	letter-spacing: -0.015em;
+}
