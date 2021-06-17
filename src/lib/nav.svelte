@@ -23,14 +23,16 @@
 		width: 100%;
 		z-index: 10000;
 		cursor: default;
-		height: 3.5em;
-		line-height: 3.5em;
+		height: var(--nav-height);
+		line-height: var(--nav-height);
 	}
 
 	ul {
 		margin-bottom: 0;
 		list-style: none;
 		padding-left: 0;
+		white-space: nowrap;
+		overflow-x: auto;
 	}
 
 	li {
@@ -64,14 +66,11 @@
 
 	.placeholder {
 		width: 100%;
-		height: 3.5em;
+		height: var(--nav-height);
 	}
 
 	@include for-phone-only {
 		nav {
-			height: 44px;
-			line-height: 44px;
-
 			a {
 				padding: 0 0.75em;
 				height: inherit;

@@ -1,3 +1,6 @@
+@import './breakpoints';
+@import './mixins';
+
 :root {
 	--main-blue: #13767c;
 	--hover-blue: #16878d;
@@ -15,6 +18,18 @@
 	--bold-grey: #3e3e3e;
 
 	--main-white: #ffffff;
+
+	--nav-height: 3.5em;
+}
+
+@include for-phone-only {
+	:root {
+		--nav-height: 44px;
+	}
+}
+
+html {
+	scroll-behavior: smooth;
 }
 
 *,
@@ -27,6 +42,14 @@
 
 body {
 	font-family: 'Montserrat', sans-serif;
+	color: var(--main-grey);
+	font-size: 10pt;
+}
+
+@include for-phone-only {
+	body {
+		line-height: 1.75;
+	}
 }
 
 a {
@@ -87,4 +110,92 @@ h2 {
 h3 {
 	font-size: 1.5em;
 	letter-spacing: -0.015em;
+}
+
+@include for-phone-only {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-size: 1.25em;
+		margin: 0 0 0.4em 0;
+	}
+
+	h1 {
+		font-size: 2.25em;
+		line-height: 1.25em;
+	}
+}
+
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
+button,
+.button {
+	transition: background-color 0.2s ease-in-out;
+	appearance: none;
+	position: relative;
+	display: inline-block;
+	color: var(--main-white);
+	text-decoration: none;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+	border-radius: 8px;
+	text-shadow: none;
+	overflow: hidden;
+	background-color: var(--main-blue);
+	padding: 1em 2.35em 1em 2.35em;
+	font-size: 1.1em;
+	max-width: 24em;
+	font-family: inherit;
+	@include button-focus-outline(var(--main-red));
+
+	&:hover {
+		background-color: var(--hover-blue);
+		color: var(--main-white);
+	}
+
+	&:active {
+		background-color: var(--active-blue);
+		top: 1px;
+	}
+
+	&.large {
+		font-size: 1.5em;
+		letter-spacing: -0.025em;
+	}
+
+	&.alt {
+		background-color: #444;
+
+		&:hover {
+			background-color: #4f4f4f;
+			color: var(--main-white);
+		}
+
+		&:active {
+			background-color: #3f3f3f;
+		}
+	}
+}
+
+@include for-phone-only {
+	input[type='button'],
+	input[type='submit'],
+	input[type='reset'],
+	button,
+	.button {
+		text-align: center;
+		font-size: 1.2em;
+		width: 100%;
+		padding: 1em 0 1em 0;
+
+		&.large {
+			font-size: 1.2em;
+			letter-spacing: 0;
+		}
+	}
 }

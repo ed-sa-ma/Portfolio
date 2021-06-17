@@ -17,6 +17,7 @@
 		"node-sass": "^6.0.0",
 		"prettier": "~2.2.1",
 		"prettier-plugin-svelte": "^2.2.0",
+		"prismic-dom": "^2.2.5",
 		"sass": "^1.34.1",
 		"svelte": "^3.34.0",
 		"svelte-preprocess": "^4.7.3"
