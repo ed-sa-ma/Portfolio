@@ -24,8 +24,9 @@
 	import { setContext } from 'svelte';
 	import Head from '$lib/head.svelte';
 	import Heading from '$lib/heading.svelte';
-	import Skills from '$lib/skills.svelte';
 	import Nav from '$lib/nav.svelte';
+	import Portfolio from '$lib/portfolio.svelte';
+	import Skills from '$lib/skills.svelte';
 
 	// Creating a readable store from the prop data and setting it as a context for child components.
 	export let data;
@@ -42,18 +43,22 @@
 <article id="skills" class="wrapper style2">
 	<Skills />
 </article>
+<article id="portfolio" class="wrapper style3">
+	<Portfolio />
+</article>
 
 <style>
 	.wrapper {
-		min-height: calc(100vh - var(--nav-height));
+		align-items: center;
 		background-image: url('/images/granular_bg.png');
-		min-width: 100vw;
+		box-shadow: inset 0 1px 0 0 rgb(0 0 0 / 5%), inset 0 2px 3px 0 rgb(0 0 0 / 10%);
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		align-items: center;
-		text-align: center;
+		min-height: calc(100vh - var(--nav-height));
+		min-width: 100vw;
 		padding: 3em 1em;
+		text-align: center;
 	}
 
 	.style1 {
@@ -63,7 +68,12 @@
 	}
 
 	.style2 {
-		background-color: #f1f1f1;
+		background-color: #fafafa;
+		text-shadow: 1px 1px 0 #fff;
+	}
+
+	.style3 {
+		background-color: #f4f4f4;
 		text-shadow: 1px 1px 0 #fff;
 	}
 </style>
