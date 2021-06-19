@@ -26,6 +26,7 @@
 	import Heading from '$lib/heading.svelte';
 	import Nav from '$lib/nav.svelte';
 	import Portfolio from '$lib/portfolio.svelte';
+	import Reviews from '$lib/reviews.svelte';
 	import Skills from '$lib/skills.svelte';
 
 	// Creating a readable store from the prop data and setting it as a context for child components.
@@ -45,6 +46,9 @@
 </article>
 <article id="portfolio" class="wrapper style3">
 	<Portfolio />
+</article>
+<article id="reviews" class="wrapper style4">
+	<Reviews />
 </article>
 
 <style>
@@ -74,6 +78,11 @@
 
 	.style3 {
 		background-color: #f4f4f4;
+		text-shadow: 1px 1px 0 #fff;
+	}
+
+	.style4 {
+		background-color: #ececec;
 		text-shadow: 1px 1px 0 #fff;
 	}
 </style>
