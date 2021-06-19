@@ -5,7 +5,6 @@
 
 	let data = getContext('content');
 	let { projects } = $data;
-	console.log(projects.items[0]);
 </script>
 
 <SectionLayout
