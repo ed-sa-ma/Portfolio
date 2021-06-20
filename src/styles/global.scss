@@ -187,6 +187,8 @@ button,
 		border-radius: 0;
 		color: var(--main-blue);
 		text-decoration: underline;
+		// Avoid 100% width on phone.
+		width: initial;
 	}
 }
 

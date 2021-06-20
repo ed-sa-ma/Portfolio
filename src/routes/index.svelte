@@ -22,6 +22,7 @@
 <script>
 	import { readable } from 'svelte/store';
 	import { setContext } from 'svelte';
+	import Contact from '$lib/contact.svelte';
 	import Head from '$lib/head.svelte';
 	import Heading from '$lib/heading.svelte';
 	import Nav from '$lib/nav.svelte';
@@ -49,6 +50,9 @@
 </article>
 <article id="reviews" class="wrapper style4">
 	<Reviews />
+</article>
+<article id="contact" class="wrapper style5">
+	<Contact />
 </article>
 
 <style>
@@ -84,5 +88,15 @@
 	.style4 {
 		background-color: #ececec;
 		text-shadow: 1px 1px 0 #fff;
+	}
+
+	.style5 {
+		background-color: #303030;
+		color: #999;
+		text-shadow: -1px -1px 0 #181818;
+	}
+
+	:global(.style5 h2, .style5 h3) {
+		color: var(--main-white);
 	}
 </style>
