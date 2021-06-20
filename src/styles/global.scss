@@ -180,6 +180,14 @@ button,
 			background-color: #3f3f3f;
 		}
 	}
+
+	&.link {
+		background: none;
+		padding: 0;
+		border-radius: 0;
+		color: var(--main-blue);
+		text-decoration: underline;
+	}
 }
 
 @include for-phone-only {

@@ -25,12 +25,8 @@
 		</div>
 	</div>
 	<!-- svelte-ignore a11y-missing-attribute -->
-	<a
-		class="expand-link"
-		href="/"
-		role="button"
-		on:click|preventDefault={() => (collapsed = !collapsed)}
-		>{collapsed ? 'See more' : 'See less'}</a
+	<button class="expand-link link" href="/" on:click|preventDefault={() => (collapsed = !collapsed)}
+		>{collapsed ? 'See more' : 'See less'}</button
 	>
 </div>
 
