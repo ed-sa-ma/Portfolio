@@ -1,14 +1,26 @@
 <script>
-	import { getContext } from 'svelte';
+	import { blur } from 'svelte/transition';
+	import { getContext, onMount } from 'svelte';
 	import RichText from '$lib/rich-text.svelte';
 
 	let data = getContext('content');
 	let { header } = $data;
+	let visible = false;
+
+	onMount(() => (visible = true));
 </script>
 
 <div class="heading wrapper">
 	<div class="fit">
-		<img src={header.image.url} alt={header.image.alt} />
+		{#if visible}
+			<img
+				class="visible"
+				in:blur={{ duration: 1000 }}
+				src={header.image.url}
+				alt={header.image.alt}
+			/>
+		{/if}
+		<img aria-hidden="true" class="placeholder" src={header.image.url} alt={header.image.alt} />
 	</div>
 	<div>
 		<header>
@@ -38,10 +50,19 @@
 	.fit {
 		width: 60%;
 		max-width: 24em;
+		position: relative;
 	}
 
 	img {
 		width: 100%;
+	}
+
+	img.visible {
+		position: absolute;
+	}
+
+	img.placeholder {
+		visibility: hidden;
 	}
 
 	a {
