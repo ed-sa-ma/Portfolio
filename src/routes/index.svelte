@@ -23,6 +23,7 @@
 	import { readable } from 'svelte/store';
 	import { setContext } from 'svelte';
 	import Contact from '$lib/contact.svelte';
+	import Copyright from '$lib/copyright.svelte';
 	import Head from '$lib/head.svelte';
 	import Heading from '$lib/heading.svelte';
 	import Nav from '$lib/nav.svelte';
@@ -53,6 +54,9 @@
 </article>
 <article id="contact" class="wrapper style5">
 	<Contact />
+	<footer>
+		<Copyright />
+	</footer>
 </article>
 
 <style>
