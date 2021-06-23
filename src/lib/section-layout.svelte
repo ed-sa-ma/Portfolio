@@ -30,16 +30,17 @@
 {/if}
 
 <style>
-	.title {
-		margin-bottom: 1em;
-	}
 	.description,
 	.note {
 		font-size: 1.25em;
-		margin-bottom: 1em;
+		margin-top: 1em;
 	}
 
 	.content {
-		margin-bottom: 2em;
+		margin-top: 1em;
+	}
+
+	.button {
+		margin-top: 2em;
 	}
 </style>
