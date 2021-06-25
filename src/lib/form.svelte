@@ -211,6 +211,8 @@
 	.actions {
 		display: flex;
 		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 		margin-top: 2em;
 
 		> button + button {
@@ -221,7 +223,6 @@
 	@include for-tablet-portrait-up {
 		.actions {
 			flex-direction: row;
-			justify-content: center;
 
 			> button + button {
 				margin-top: 0;
