@@ -16,7 +16,9 @@
 	</div>
 </div>
 
-<style>
+<style lang="scss">
+	@import '../styles/breakpoints.scss';
+
 	.project-tile {
 		--vertical-padding: 1.5em;
 		--horizontal-padding: 1em;
@@ -34,5 +36,20 @@
 		top: calc(var(--padding) - var(--vertical-padding));
 		left: calc(var(--padding) - var(--horizontal-padding));
 		width: calc(100% - 2 * var(--padding) + 2 * var(--horizontal-padding));
+	}
+
+	.description {
+		margin-top: 0.8em;
+	}
+
+	@include for-tablet-portrait-up {
+		.project-tile {
+			--vertical-padding: 2em;
+			--horizontal-padding: 2em;
+		}
+
+		.description {
+			margin-top: 1em;
+		}
 	}
 </style>

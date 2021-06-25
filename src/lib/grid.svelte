@@ -14,8 +14,9 @@
 
 	:global(.grid-component > *) {
 		margin: var(--spacing);
-		max-width: var(--max-width, 500px);
-		min-width: var(--min-width, 300px);
-		flex: 1;
+		max-width: var(--max-width);
+		min-width: var(--min-width);
+		width: var(--width);
+		flex: var(--flex);
 	}
 </style>

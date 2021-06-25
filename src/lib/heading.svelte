@@ -89,6 +89,7 @@
 	@include for-tablet-portrait-up {
 		.description {
 			font-size: 1.5em;
+			line-height: 1.75em;
 		}
 
 		a {

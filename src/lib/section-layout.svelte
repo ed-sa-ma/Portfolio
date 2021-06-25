@@ -19,7 +19,7 @@
 	</div>
 </div>
 
-{#if note}
+{#if note && note.length}
 	<div class="note">
 		<RichText text={note} />
 	</div>
@@ -41,7 +41,7 @@
 		font-size: 1.25em;
 	}
 	.description {
-		margin-top: 0.5em;
+		margin-top: 0.8em;
 	}
 
 	.note {
@@ -57,6 +57,10 @@
 	}
 
 	@include for-tablet-portrait-up {
+		.description {
+			margin-top: 1em;
+		}
+
 		.content {
 			margin-top: 2em;
 		}

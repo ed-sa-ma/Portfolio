@@ -45,12 +45,12 @@ body {
 	font-family: 'Montserrat', sans-serif;
 	color: var(--main-grey);
 	font-size: 10pt;
-	line-height: 1.75;
+	line-height: 1.75em;
 }
 
 @include for-tablet-portrait-up {
 	body {
-		line-height: 1.85;
+		line-height: 1.85em;
 		font-size: 11pt;
 	}
 }
