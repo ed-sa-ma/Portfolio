@@ -30,6 +30,8 @@
 {/if}
 
 <style lang="scss">
+	@import '../styles/breakpoints.scss';
+
 	.confirm-dialog {
 		position: fixed;
 		inset: 0;
@@ -63,7 +65,29 @@
 		min-width: 100%;
 	}
 
-	.actions > button + button {
-		margin-top: 0.8em;
+	.actions {
+		display: flex;
+		flex-direction: column;
+
+		& > button + button {
+			margin-top: 0.8em;
+		}
+	}
+
+	@include for-tablet-portrait-up {
+		.actions {
+			flex-direction: row;
+			justify-content: center;
+
+			> button + button {
+				margin-top: 0;
+				margin-left: 0.8em;
+			}
+		}
+
+		.actions,
+		button {
+			min-width: unset;
+		}
 	}
 </style>

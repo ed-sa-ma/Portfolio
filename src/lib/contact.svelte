@@ -32,6 +32,8 @@
 </div>
 
 <style lang="scss">
+	@import '../styles/breakpoints.scss';
+
 	hr {
 		width: 100%;
 		border: 0;
@@ -50,7 +52,7 @@
 		margin: 0;
 
 		li {
-			margin: 0.5em;
+			margin: 0.3em;
 			display: inline-block;
 		}
 
@@ -72,13 +74,26 @@
 				left: 0;
 				content: '';
 				transition: background-color 0.2s ease-in-out;
-				// background-color: #444;
 				background-color: transparent;
 				display: block;
 				height: 48px;
 				width: 48px;
 				border-radius: 6px;
 			}
+
+			&:hover {
+				top: -5px;
+
+				&:before {
+					background-color: transparent;
+				}
+			}
+		}
+	}
+
+	@media (hover: hover) {
+		ul.social-icons a:before {
+			background-color: #444;
 		}
 	}
 

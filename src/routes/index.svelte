@@ -41,25 +41,37 @@
 <Nav />
 
 <article id="top" class="wrapper style1">
-	<Heading />
+	<div class="container">
+		<Heading />
+	</div>
 </article>
 <article id="skills" class="wrapper style2">
-	<Skills />
+	<div class="container">
+		<Skills />
+	</div>
 </article>
 <article id="portfolio" class="wrapper style3">
-	<Portfolio />
+	<div class="container">
+		<Portfolio />
+	</div>
 </article>
 <article id="reviews" class="wrapper style4">
-	<Reviews />
+	<div class="container">
+		<Reviews />
+	</div>
 </article>
 <article id="contact" class="wrapper style5">
-	<Contact />
-	<footer>
-		<Copyright />
-	</footer>
+	<div class="container reduced-bleed">
+		<Contact />
+		<footer>
+			<Copyright />
+		</footer>
+	</div>
 </article>
 
-<style>
+<style lang="scss">
+	@import '../styles/breakpoints.scss';
+
 	.wrapper {
 		align-items: center;
 		background-image: url('/images/granular_bg.png');
@@ -71,6 +83,20 @@
 		min-width: 100vw;
 		padding: 3em 1em;
 		text-align: center;
+	}
+
+	@include for-tablet-portrait-up {
+		.wrapper {
+			padding: 3em 2em;
+		}
+
+		.wrapper:last-of-type {
+			padding-bottom: 5em;
+		}
+	}
+
+	.container {
+		max-width: 1200px;
 	}
 
 	.style1 {
@@ -98,6 +124,13 @@
 		background-color: #303030;
 		color: #999;
 		text-shadow: -1px -1px 0 #181818;
+	}
+
+	@include for-tablet-portrait-up {
+		.reduced-bleed {
+			// Form should get 80% of the width of the rest of the sections.
+			max-width: min(80%, calc(1200px * 0.8));
+		}
 	}
 
 	:global(.style5 h2, .style5 h3) {

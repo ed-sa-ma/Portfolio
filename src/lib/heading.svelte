@@ -15,14 +15,14 @@
 		{#if visible}
 			<img
 				class="visible"
-				in:blur={{ duration: 1000 }}
+				in:blur={{ duration: 800, delay: 200 }}
 				src={header.image.url}
 				alt={header.image.alt}
 			/>
 		{/if}
 		<img aria-hidden="true" class="placeholder" src={header.image.url} alt={header.image.alt} />
 	</div>
-	<div>
+	<div class="text">
 		<header>
 			<RichText text={header.title} />
 		</header>
@@ -34,6 +34,8 @@
 </div>
 
 <style lang="scss">
+	@import '../styles/breakpoints.scss';
+
 	:global(.heading strong, .heading a, .heading h1) {
 		color: inherit;
 	}
@@ -53,6 +55,21 @@
 		position: relative;
 	}
 
+	@include for-desktop-up {
+		.wrapper {
+			flex-direction: row;
+		}
+
+		.text {
+			text-align: start;
+			margin-left: 2em;
+		}
+
+		.fit {
+			width: 70%;
+		}
+	}
+
 	img {
 		width: 100%;
 	}
@@ -67,5 +84,15 @@
 
 	a {
 		margin-top: 1em;
+	}
+
+	@include for-tablet-portrait-up {
+		.description {
+			font-size: 1.5em;
+		}
+
+		a {
+			margin-top: 2em;
+		}
 	}
 </style>

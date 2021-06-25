@@ -65,18 +65,27 @@
 		netlify
 		on:submit|preventDefault={handleSubmit}
 	>
-		<label for="name">Name*:</label>
-		<input type="text" name="name" id="name" required on:focus|once={handleFirstFocus} />
-		<label for="email">Email*:</label>
-		<input
-			type="email"
-			name="email"
-			id="email"
-			required
-			title="user@emaildomain.com"
-			pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)+$"
-			on:focus|once={handleFirstFocus}
-		/>
+		<div class="name-email">
+			<label for="name">Name*:</label>
+			<input
+				class="name-input"
+				type="text"
+				name="name"
+				id="name"
+				required
+				on:focus|once={handleFirstFocus}
+			/>
+			<label class="email-label" for="email">Email*:</label>
+			<input
+				type="email"
+				name="email"
+				id="email"
+				required
+				title="user@emaildomain.com"
+				pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)+$"
+				on:focus|once={handleFirstFocus}
+			/>
+		</div>
 		<label for="subject">Subject:</label>
 		<input type="text" name="subject" id="subject" />
 		<label for="message">Message*:</label>
@@ -106,6 +115,8 @@
 </div>
 
 <style lang="scss">
+	@import '../styles/breakpoints.scss';
+
 	.form-wrapper {
 		position: relative;
 	}
@@ -169,6 +180,10 @@
 		outline: none;
 	}
 
+	textarea {
+		height: 15em;
+	}
+
 	label {
 		color: #fff;
 		font-weight: 700;
@@ -177,11 +192,41 @@
 		margin: 0.8em 0 0.5em;
 	}
 
+	.name-email {
+		display: grid;
+	}
+
+	@include for-tablet-portrait-up {
+		.name-email {
+			grid-template-columns: 1fr 1fr;
+			column-gap: 2em;
+		}
+
+		// Re-ordering when the inputs are displayed side by side to have the labels over them.
+		.name-input {
+			grid-area: 2;
+		}
+	}
+
 	.actions {
+		display: flex;
+		flex-direction: column;
 		margin-top: 2em;
 
-		> * + * {
+		> button + button {
 			margin-top: 0.8em;
+		}
+	}
+
+	@include for-tablet-portrait-up {
+		.actions {
+			flex-direction: row;
+			justify-content: center;
+
+			> button + button {
+				margin-top: 0;
+				margin-left: 0.8em;
+			}
 		}
 	}
 
