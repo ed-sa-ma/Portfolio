@@ -1,9 +1,7 @@
 import Prismic from '@prismicio/client';
 
-// TODO: clean this up once implementation works.
-
-let apiEndpoint = import.meta.env.VITE_API_ENDPOINT || '';
-let accessToken = import.meta.env.VITE_ACCESS_TOKEN || '';
+let apiEndpoint = import.meta.env.VITE_API_ENDPOINT || process.env['API_ENDPOINT'] || '';
+let accessToken = import.meta.env.VITE_ACCESS_TOKEN || process.env['ACCESS_TOKEN'] || '';
 
 async function getApi(req) {
 	return Prismic.getApi(apiEndpoint, { accessToken, ...(req ? { req } : null) });
