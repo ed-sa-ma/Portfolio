@@ -4,3 +4,7 @@ node_modules
 /package
 
 .env.local
+
+build/
+
+netlify_tokens.md
