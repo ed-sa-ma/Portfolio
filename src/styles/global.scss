@@ -201,17 +201,17 @@ button,
 			letter-spacing: 0;
 		}
 	}
+}
 
-	@include for-tablet-portrait-up {
-		body {
-			line-height: 1.85em;
-			font-size: 11pt;
-		}
+@include for-tablet-portrait-up {
+	body {
+		line-height: 1.85em;
+		font-size: 11pt;
 	}
+}
 
-	@include for-desktop-up {
-		body {
-			font-size: 13pt;
-		}
+@include for-desktop-up {
+	body {
+		font-size: 13pt;
 	}
 }
