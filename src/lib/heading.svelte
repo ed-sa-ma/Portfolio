@@ -59,28 +59,6 @@
 		margin-top: 1em;
 	}
 
-	@include for-tablet-portrait-up {
-		.text {
-			margin-top: 2em;
-		}
-	}
-
-	@include for-desktop-up {
-		.wrapper {
-			flex-direction: row;
-		}
-
-		.text {
-			text-align: start;
-			margin-left: 2em;
-			margin-top: 0;
-		}
-
-		.fit {
-			width: 70%;
-		}
-	}
-
 	img {
 		width: 100%;
 	}
@@ -98,6 +76,10 @@
 	}
 
 	@include for-tablet-portrait-up {
+		.text {
+			margin-top: 2em;
+		}
+
 		.description {
 			font-size: 1.5em;
 			line-height: 1.75em;
@@ -105,6 +87,22 @@
 
 		a {
 			margin-top: 2em;
+		}
+	}
+
+	@include for-desktop-up {
+		.wrapper {
+			flex-direction: row;
+		}
+
+		.text {
+			text-align: start;
+			margin-left: 2em;
+			margin-top: 0;
+		}
+
+		.fit {
+			width: 70%;
 		}
 	}
 </style>

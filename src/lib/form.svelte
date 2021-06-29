@@ -198,18 +198,6 @@
 		display: grid;
 	}
 
-	@include for-tablet-portrait-up {
-		.name-email {
-			grid-template-columns: 1fr 1fr;
-			column-gap: 2em;
-		}
-
-		// Re-ordering when the inputs are displayed side by side to have the labels over them.
-		.name-input {
-			grid-area: 2;
-		}
-	}
-
 	.actions {
 		display: flex;
 		flex-direction: column;
@@ -222,7 +210,22 @@
 		}
 	}
 
+	.error-message {
+		color: var(--main-red);
+		margin-top: 1em;
+	}
+
 	@include for-tablet-portrait-up {
+		.name-email {
+			grid-template-columns: 1fr 1fr;
+			column-gap: 2em;
+		}
+
+		// Re-ordering when the inputs are displayed side by side to have the labels over them.
+		.name-input {
+			grid-area: 2;
+		}
+
 		.actions {
 			flex-direction: row;
 
@@ -231,10 +234,5 @@
 				margin-left: 0.8em;
 			}
 		}
-	}
-
-	.error-message {
-		color: var(--main-red);
-		margin-top: 1em;
 	}
 </style>

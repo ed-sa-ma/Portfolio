@@ -22,12 +22,6 @@
 	--nav-height: 3.5em;
 }
 
-@include for-phone-only {
-	:root {
-		--nav-height: 44px;
-	}
-}
-
 html {
 	scroll-behavior: smooth;
 	background-color: var(--main-blue);
@@ -46,19 +40,6 @@ body {
 	color: var(--main-grey);
 	font-size: 10pt;
 	line-height: 1.75em;
-}
-
-@include for-tablet-portrait-up {
-	body {
-		line-height: 1.85em;
-		font-size: 11pt;
-	}
-}
-
-@include for-desktop-up {
-	body {
-		font-size: 13pt;
-	}
 }
 
 a {
@@ -119,23 +100,6 @@ h2 {
 h3 {
 	font-size: 1.5em;
 	letter-spacing: -0.015em;
-}
-
-@include for-phone-only {
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		font-size: 1.25em;
-		margin: 0 0 0.4em 0;
-	}
-
-	h1 {
-		font-size: 2.25em;
-		line-height: 1.25em;
-	}
 }
 
 input[type='button'],
@@ -203,6 +167,25 @@ button,
 }
 
 @include for-phone-only {
+	:root {
+		--nav-height: 44px;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-size: 1.25em;
+		margin: 0 0 0.4em 0;
+	}
+
+	h1 {
+		font-size: 2.25em;
+		line-height: 1.25em;
+	}
+
 	input[type='button'],
 	input[type='submit'],
 	input[type='reset'],
@@ -216,6 +199,19 @@ button,
 		&.large {
 			font-size: 1.2em;
 			letter-spacing: 0;
+		}
+	}
+
+	@include for-tablet-portrait-up {
+		body {
+			line-height: 1.85em;
+			font-size: 11pt;
+		}
+	}
+
+	@include for-desktop-up {
+		body {
+			font-size: 13pt;
 		}
 	}
 }

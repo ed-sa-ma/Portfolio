@@ -85,16 +85,6 @@
 		text-align: center;
 	}
 
-	@include for-tablet-portrait-up {
-		.wrapper {
-			padding: 3em 2em;
-		}
-
-		.wrapper:last-of-type {
-			padding-bottom: 5em;
-		}
-	}
-
 	.container {
 		max-width: 1200px;
 	}
@@ -126,14 +116,22 @@
 		text-shadow: -1px -1px 0 #181818;
 	}
 
+	:global(.style5 h2, .style5 h3) {
+		color: var(--main-white);
+	}
+
 	@include for-tablet-portrait-up {
+		.wrapper {
+			padding: 3em 2em;
+		}
+
+		.wrapper:last-of-type {
+			padding-bottom: 5em;
+		}
+
 		.reduced-bleed {
 			// Form should get 80% of the width of the rest of the sections.
 			max-width: min(80%, calc(1200px * 0.8));
 		}
-	}
-
-	:global(.style5 h2, .style5 h3) {
-		color: var(--main-white);
 	}
 </style>

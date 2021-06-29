@@ -76,10 +76,6 @@
 				height: inherit;
 				line-height: inherit;
 				border-radius: 0;
-
-				&:hover {
-					background-color: transparent;
-				}
 			}
 		}
 	}
