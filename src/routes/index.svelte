@@ -72,6 +72,10 @@
 <style lang="scss">
 	@import '../styles/breakpoints.scss';
 
+	:global(.style5 h2, .style5 h3) {
+		color: var(--main-white);
+	}
+
 	.wrapper {
 		align-items: center;
 		background-image: url('/images/granular_bg.png');
@@ -114,10 +118,6 @@
 		background-color: #303030;
 		color: #999;
 		text-shadow: -1px -1px 0 #181818;
-	}
-
-	:global(.style5 h2, .style5 h3) {
-		color: var(--main-white);
 	}
 
 	@include for-tablet-portrait-up {

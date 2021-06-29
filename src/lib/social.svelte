@@ -27,6 +27,12 @@
 <style lang="scss">
 	@import '../styles/breakpoints.scss';
 
+	:global(ul.social-icons svg) {
+		position: relative;
+		height: 28px;
+		color: #2e2e2e;
+	}
+
 	.social {
 		margin-top: 2em;
 	}
@@ -80,11 +86,5 @@
 		ul.social-icons a:before {
 			background-color: #444;
 		}
-	}
-
-	:global(ul.social-icons svg) {
-		position: relative;
-		height: 28px;
-		color: #2e2e2e;
 	}
 </style>

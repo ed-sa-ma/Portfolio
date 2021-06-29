@@ -119,6 +119,13 @@
 <style lang="scss">
 	@import '../styles/breakpoints.scss';
 
+	// We don't want the red shadow for invalid by default. We wait until after the first focus.
+	:global(input.already-focused:not(:focus):invalid, textarea.already-focused:not(:focus):invalid) {
+		box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.05),
+			0px 1px 0px 0px rgba(255, 255, 255, 0.025), inset 0px 0px 2px 1px var(--main-red);
+		outline: none;
+	}
+
 	.form-wrapper {
 		position: relative;
 	}
@@ -173,13 +180,6 @@
 			caret-color: var(--main-white);
 			border: 1px solid var(--main-blue);
 		}
-	}
-
-	// We don't want the red shadow for invalid by default. We wait until after the first focus.
-	:global(input.already-focused:not(:focus):invalid, textarea.already-focused:not(:focus):invalid) {
-		box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.05),
-			0px 1px 0px 0px rgba(255, 255, 255, 0.025), inset 0px 0px 2px 1px var(--main-red);
-		outline: none;
 	}
 
 	textarea {

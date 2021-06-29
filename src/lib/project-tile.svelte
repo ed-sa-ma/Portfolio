@@ -22,6 +22,10 @@
 <style lang="scss">
 	@import '../styles/breakpoints.scss';
 
+	:global(.project-tile a h3) {
+		color: inherit;
+	}
+
 	.project-tile {
 		--vertical-padding: 1.5em;
 		--horizontal-padding: 1em;
@@ -49,10 +53,6 @@
 
 	a.header:hover {
 		color: var(--main-blue);
-	}
-
-	:global(.project-tile a h3) {
-		color: inherit;
 	}
 
 	.description {

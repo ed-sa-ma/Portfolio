@@ -31,6 +31,10 @@
 </div>
 
 <style lang="scss">
+	:global(.review a h3) {
+		color: inherit;
+	}
+
 	.review {
 		background: #fff;
 		box-shadow: inset 0 0 0 1px rgb(0 0 0 / 15%), 0 2px 3px 0 rgb(0 0 0 / 10%);
@@ -63,10 +67,6 @@
 
 	a.header:hover {
 		color: var(--main-blue);
-	}
-
-	:global(.review a h3) {
-		color: inherit;
 	}
 
 	.expand-link {
