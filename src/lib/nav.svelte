@@ -54,9 +54,11 @@
 		transition: background-color 0.2s ease-in-out;
 		@include button-focus-outline(var(--main-white));
 
-		&:hover {
-			color: var(--main-white);
-			background: var(--hover-black);
+		@media (hover: hover) {
+			&:hover {
+				color: var(--main-white);
+				background: var(--hover-black);
+			}
 		}
 
 		&:active {

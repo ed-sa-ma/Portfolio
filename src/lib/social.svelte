@@ -72,11 +72,13 @@
 				border-radius: 6px;
 			}
 
-			&:hover {
-				top: -5px;
+			@media (hover: hover) {
+				&:hover {
+					top: -5px;
 
-				&:before {
-					background-color: transparent;
+					&:before {
+						background-color: transparent;
+					}
 				}
 			}
 		}

@@ -46,8 +46,10 @@ a {
 	color: var(--main-blue);
 	text-decoration: underline;
 
-	&:hover {
-		color: var(--hover-blue);
+	@media (hover: hover) {
+		&:hover {
+			color: var(--hover-blue);
+		}
 	}
 
 	& img {
@@ -127,9 +129,11 @@ button,
 	font-family: inherit;
 	@include button-focus-outline(var(--main-red));
 
-	&:hover {
-		background-color: var(--hover-blue);
-		color: var(--main-white);
+	@media (hover: hover) {
+		&:hover {
+			background-color: var(--hover-blue);
+			color: var(--main-white);
+		}
 	}
 
 	&:active {
@@ -145,9 +149,11 @@ button,
 	&.alt {
 		background-color: #444;
 
-		&:hover {
-			background-color: #4f4f4f;
-			color: var(--main-white);
+		@media (hover: hover) {
+			&:hover {
+				background-color: #4f4f4f;
+				color: var(--main-white);
+			}
 		}
 
 		&:active {

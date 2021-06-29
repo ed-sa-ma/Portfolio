@@ -49,10 +49,12 @@
 		text-decoration: none;
 		// Regular headline color.
 		color: var(--bold-grey);
-	}
 
-	a.header:hover {
-		color: var(--main-blue);
+		@media (hover: hover) {
+			&:hover {
+				color: var(--main-blue);
+			}
+		}
 	}
 
 	.description {
