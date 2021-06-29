@@ -65,6 +65,8 @@
 		netlify
 		on:submit|preventDefault={handleSubmit}
 	>
+		<!-- https://docs.netlify.com/forms/setup/#work-with-javascript-rendered-forms -->
+		<input type="hidden" name="form-name" value="contact-form" />
 		<div class="name-email">
 			<label for="name">Name*:</label>
 			<input
