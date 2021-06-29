@@ -55,6 +55,16 @@
 		position: relative;
 	}
 
+	.text {
+		margin-top: 1em;
+	}
+
+	@include for-tablet-portrait-up {
+		.text {
+			margin-top: 2em;
+		}
+	}
+
 	@include for-desktop-up {
 		.wrapper {
 			flex-direction: row;
@@ -63,6 +73,7 @@
 		.text {
 			text-align: start;
 			margin-left: 2em;
+			margin-top: 0;
 		}
 
 		.fit {

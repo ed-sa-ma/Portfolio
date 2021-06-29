@@ -4,13 +4,16 @@
 	export let title;
 	export let description;
 	export let image;
+	export let link;
 </script>
 
 <div class="project-tile">
-	<img src={image.url} alt={image.alt} />
-	<div class="title">
+	<a href={link} rel="noopener" target="__blank">
+		<img src={image.url} alt={image.alt} />
+	</a>
+	<a class="header" href={link} target="_blank" rel="noopener">
 		<RichText text={title} />
-	</div>
+	</a>
 	<div class="description">
 		<RichText text={description} />
 	</div>
@@ -36,6 +39,20 @@
 		top: calc(var(--padding) - var(--vertical-padding));
 		left: calc(var(--padding) - var(--horizontal-padding));
 		width: calc(100% - 2 * var(--padding) + 2 * var(--horizontal-padding));
+	}
+
+	a.header {
+		text-decoration: none;
+		// Regular headline color.
+		color: var(--bold-grey);
+	}
+
+	a.header:hover {
+		color: var(--main-blue);
+	}
+
+	:global(.project-tile a h3) {
+		color: inherit;
 	}
 
 	.description {

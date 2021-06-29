@@ -21,6 +21,7 @@
 					title={project['project_title']}
 					description={project['project_description']}
 					image={project['project_image']}
+					link={project['project_link']}
 				/>
 			{/each}
 		</Grid>
