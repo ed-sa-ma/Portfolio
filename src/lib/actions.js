@@ -1,9 +1,13 @@
 import { spring } from 'svelte/motion';
 
-function collapse(element) {
-	let eased_height = spring(0);
+function collapse(element, { reducedMotion }) {
+	if (reducedMotion) return;
+
+	let eased_height = spring(0, { damping: 1 });
 	let unsubscribe = eased_height.subscribe((value) => {
-		element.parentElement.style.maxHeight = `${value}px`;
+		requestAnimationFrame(() => {
+			element.parentElement.style.maxHeight = `${value}px`;
+		});
 	});
 
 	let observer = new ResizeObserver(function handleResize([entry]) {

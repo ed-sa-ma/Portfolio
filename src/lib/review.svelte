@@ -1,4 +1,5 @@
 <script>
+	import { browser } from '$app/env';
 	import { collapse } from '$lib/actions.js';
 	import RichText from '$lib/rich-text.svelte';
 
@@ -7,6 +8,7 @@
 	export let review;
 	export let linkedin;
 
+	let reducedMotion = browser && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 	let collapsed = true;
 </script>
 
@@ -16,13 +18,20 @@
 	</a>
 	<RichText text={role} />
 	<div class="expandable">
-		<div class="expandable-text" class:collapsed use:collapse>
+		<div
+			class="expandable-text"
+			class:collapsed
+			class:animated={!reducedMotion}
+			use:collapse={{ reducedMotion }}
+		>
 			<RichText text={review} />
 		</div>
 		<!-- Replica which keeps the same text inside to set height on parent to avoid sudden collapsing -->
-		<div>
-			<RichText text={review} />
-		</div>
+		{#if !reducedMotion}
+			<div>
+				<RichText text={review} />
+			</div>
+		{/if}
 	</div>
 	<!-- svelte-ignore a11y-missing-attribute -->
 	<button class="expand-link link" href="/" on:click|preventDefault={() => (collapsed = !collapsed)}
@@ -54,7 +63,7 @@
 		overflow: hidden;
 	}
 
-	.expandable-text {
+	.expandable-text.animated {
 		position: absolute;
 		top: 0;
 	}
