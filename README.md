@@ -1,38 +1,42 @@
-# create-svelte
+# Personal portfolio by ed-sa-ma
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
+Site implemented by [ed-sa-ma](https://twitter.com/ed_sa_ma) for professional promotion, including samples of personal projects, opinions by colleagues from previous projects, links to all social media accounts of interest or contact form.
 
-## Creating a project
+<br/>
+<div style="text-align: center;">
+  <img src="static/images/Page_screenshot.png" width="300" />
+</div>
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Technical description
 
-```bash
-# create a new project in the current directory
-npm init svelte@next
+The implementation is based in [SvelteKit](https://kit.svelte.dev/), the applicstion framework powered by [Svelte](https://svelte.dev/). We use [Prismic](https://prismic.io/) as Content Management System, connected to an endpoint accessible by our application on load. By using [adapter-static](https://github.com/sveltejs/kit/tree/master/packages/adapter-static) we can prerender the whole application at build time. The result of that build are static HTML, CSS and JS files, which are then served by [Netlify](https://netlify.com):
 
-# create a new project in my-app
-npm init svelte@next my-app
-```
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c3a3be83-7f43-416f-a91b-9524df383921/deploy-status)](https://app.netlify.com/sites/ed-sa-ma/deploys)
 
-> Note: the `@next` is temporary
+## Credits
 
-## Developing
+---
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### Implemented in [SvelteKit](https://kit.svelte.dev/) 🧡
 
-```bash
-npm run dev
+---
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+### Content managed and delivered by [Prismic](https://prismic.io/) 💛
 
-## Building
+---
 
-Before creating a production version of your app, install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. Then:
+### Design from [HTML5 UP](https://html5up.net/) 💜
 
-```bash
-npm run build
-```
+---
 
-> You can preview the built app with `npm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.
+### Color theme chosen with [Coolors](https://coolors.co/) 💙
+
+---
+
+### Hosted by [Netlify](https://netlify.com/) 💚
+
+---
+
+### Icons by [font-awesome](https://fontawesome.com/) 🖤
+
+---
