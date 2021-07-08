@@ -77,6 +77,9 @@
 	}
 
 	.wrapper {
+		--vertical-padding: 3em;
+		--horizontal-padding: 1em;
+
 		align-items: center;
 		background-image: url('/images/granular_bg.png');
 		box-shadow: inset 0 1px 0 0 rgb(0 0 0 / 5%), inset 0 2px 3px 0 rgb(0 0 0 / 10%);
@@ -85,8 +88,9 @@
 		justify-content: center;
 		min-height: calc(100vh - var(--nav-height));
 		min-width: 100vw;
-		padding: 3em 1em;
+		padding: var(--vertical-padding) var(--horizontal-padding);
 		text-align: center;
+		scroll-margin-top: var(--vertical-padding);
 	}
 
 	.container {
@@ -122,7 +126,7 @@
 
 	@include for-tablet-portrait-up {
 		.wrapper {
-			padding: 3em 2em;
+			--horizontal-padding: 2em;
 		}
 
 		.wrapper:last-of-type {
