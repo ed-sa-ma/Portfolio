@@ -2,10 +2,7 @@
 
 Site implemented by [ed-sa-ma](https://twitter.com/ed_sa_ma) for professional promotion, including samples of personal projects, opinions by colleagues from previous projects, links to all social media accounts of interest or contact form.
 
-<br/>
-<div style="text-align: center;">
-  <img src="static/images/Page_screenshot.png" width="300" />
-</div>
+![Sceenshot of portfolio](static/images/Page_screenshot.png)
 
 ## Technical description
 
