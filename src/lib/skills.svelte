@@ -15,7 +15,7 @@
 	note={skills.note}
 >
 	{#if skills.items.length}
-		<Grid --max-width="500px" --min-width="300px" --flex="1">
+		<Grid --max-width="400px">
 			{#each skills.items as skill (skill['inline_icon'])}
 				<SkillTile
 					inlineIcon={skill['inline_icon']}

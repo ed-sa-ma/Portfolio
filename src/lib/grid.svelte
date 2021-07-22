@@ -4,17 +4,13 @@
 
 <style>
 	:global(.grid-component > *) {
-		margin: var(--spacing);
 		max-width: var(--max-width);
-		min-width: var(--min-width);
-		width: var(--width);
-		flex: var(--flex);
+		width: 100%;
 	}
 
 	.grid-component {
-		--spacing: 0.5em;
-
-		margin: calc(var(--spacing) * -1);
+		--gap: 2em;
+		gap: var(--gap);
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;

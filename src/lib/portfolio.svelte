@@ -15,7 +15,7 @@
 	title={projects.title}
 >
 	{#if projects.items.length}
-		<Grid --width="100%" --max-width="450px">
+		<Grid --width="100%" --max-width="400px">
 			{#each projects.items as project (project['project_image'].url)}
 				<ProjectTile
 					title={project['project_title']}
