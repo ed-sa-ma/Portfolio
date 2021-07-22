@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>SV ed-sa-ma</title>
+	<title>ed-sa-ma</title>
 
 	<meta
 		name="description"
