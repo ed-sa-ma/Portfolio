@@ -2,31 +2,38 @@
 
 Site implemented by [ed-sa-ma](https://twitter.com/ed_sa_ma) for professional promotion, including samples of personal projects, opinions by colleagues from previous projects, links to all social media accounts of interest or contact form.
 
-<br/>
-<div style="text-align: center;">
-  <img src="./assets/images/Page_screenshot.png" width="300" />
-</div>
+![Sceenshot of portfolio](static/images/Page_screenshot.png)
 
 ## Technical description
 
-The implementation is based in HTML, SCSS and vanilla JavaScript. In order to render repeating pieces of HTML markup like lists/grids we use [custom elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements). The idea is being able to control the content of the page with JS objects instead of directly in the markup. For this use case we don't attach shadow DOM to avoid style isolation since we store all styles in one single SCSS file.
-
-Additionally all this Javascript is served using [ES modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).
-
-## Credits
-
-### Design from [HTML5 UP](https://html5up.net/)
-
----
-
-### Color theme chosen with [Coolors](https://coolors.co/)
-
----
-
-### Hosted by [Netlify](https://netlify.com/)
+The implementation is based in [SvelteKit](https://kit.svelte.dev/), the applicstion framework powered by [Svelte](https://svelte.dev/). We use [Prismic](https://prismic.io/) as Content Management System, connected to an endpoint accessible by our application on load. By using [adapter-static](https://github.com/sveltejs/kit/tree/master/packages/adapter-static) we can prerender the whole application at build time. The result of that build are static HTML, CSS and JS files, which are then served by [Netlify](https://netlify.com):
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c3a3be83-7f43-416f-a91b-9524df383921/deploy-status)](https://app.netlify.com/sites/ed-sa-ma/deploys)
 
+## Credits
+
 ---
 
-### Icons by [font-awesome](https://fontawesome.com/)
+### Implemented in [SvelteKit](https://kit.svelte.dev/) 🧡
+
+---
+
+### Content managed and delivered by [Prismic](https://prismic.io/) 💛
+
+---
+
+### Design from [HTML5 UP](https://html5up.net/) 💜
+
+---
+
+### Color theme chosen with [Coolors](https://coolors.co/) 💙
+
+---
+
+### Hosted by [Netlify](https://netlify.com/) 💚
+
+---
+
+### Icons by [font-awesome](https://fontawesome.com/) 🖤
+
+---

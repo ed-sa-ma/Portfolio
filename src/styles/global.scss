@@ -1,0 +1,223 @@
+@import './breakpoints';
+@import './mixins';
+
+:root {
+	--main-blue: #13767c;
+	--hover-blue: #16878d;
+	--active-blue: #11656a;
+
+	--main-red: #e76969;
+	--dark-red: #af1d1d;
+
+	--main-black: #282828;
+	--focus-black: #252525;
+	--hover-black: #383838;
+	--active-black: #484848;
+
+	--main-grey: #666;
+	--bold-grey: #3e3e3e;
+
+	--main-white: #ffffff;
+
+	--nav-height: 3.5em;
+}
+
+html {
+	scroll-behavior: smooth;
+	background-color: var(--main-blue);
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	color: var(--main-grey);
+	font-size: 10pt;
+	line-height: 1.75em;
+}
+
+a {
+	color: var(--main-blue);
+	text-decoration: underline;
+
+	@media (hover: hover) {
+		&:hover {
+			color: var(--hover-blue);
+		}
+	}
+
+	& img {
+		border: 0; /* ??? */
+	}
+}
+
+b,
+strong {
+	font-weight: 600;
+	color: var(--bold-grey);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--bold-grey);
+	margin: 0 0 0.75em 0;
+	font-weight: 700; /* Overwritten for h1 below */
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+	text-decoration: none;
+	color: inherit;
+}
+
+h1 {
+	font-size: 3.25em;
+	letter-spacing: -0.025em;
+	font-weight: 300;
+
+	strong {
+		font-weight: 700;
+	}
+}
+
+h2 {
+	font-size: 2em;
+	letter-spacing: -0.015em;
+}
+
+h3 {
+	font-size: 1.5em;
+	letter-spacing: -0.015em;
+}
+
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
+button,
+.button {
+	transition: background-color 0.2s ease-in-out;
+	appearance: none;
+	position: relative;
+	display: inline-block;
+	color: var(--main-white);
+	text-decoration: none;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+	border-radius: 8px;
+	text-shadow: none;
+	overflow: hidden;
+	background-color: var(--main-blue);
+	padding: 1em 2.35em 1em 2.35em;
+	font-size: 1.1em;
+	line-height: 1;
+	max-width: 24em;
+	font-family: inherit;
+	@include button-focus-outline(var(--main-red));
+
+	@media (hover: hover) {
+		&:hover {
+			background-color: var(--hover-blue);
+			color: var(--main-white);
+		}
+	}
+
+	&:active {
+		background-color: var(--active-blue);
+		top: 1px;
+	}
+
+	&.large {
+		font-size: 1.5em;
+		letter-spacing: -0.025em;
+	}
+
+	&.alt {
+		background-color: #444;
+
+		@media (hover: hover) {
+			&:hover {
+				background-color: #4f4f4f;
+				color: var(--main-white);
+			}
+		}
+
+		&:active {
+			background-color: #3f3f3f;
+		}
+	}
+
+	&.link {
+		background: none;
+		padding: 0;
+		border-radius: 0;
+		color: var(--main-blue);
+		text-decoration: underline;
+		// Avoid 100% width on phone.
+		width: initial;
+	}
+}
+
+@include for-phone-only {
+	:root {
+		--nav-height: 44px;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-size: 1.25em;
+		margin: 0 0 0.4em 0;
+	}
+
+	h1 {
+		font-size: 2.25em;
+		line-height: 1.25em;
+	}
+
+	input[type='button'],
+	input[type='submit'],
+	input[type='reset'],
+	button,
+	.button {
+		text-align: center;
+		font-size: 1.2em;
+		width: 100%;
+		padding: 1em 0 1em 0;
+
+		&.large {
+			font-size: 1.2em;
+			letter-spacing: 0;
+		}
+	}
+}
+
+@include for-tablet-portrait-up {
+	body {
+		line-height: 1.85em;
+		font-size: 11pt;
+	}
+}
+
+@include for-desktop-up {
+	body {
+		font-size: 13pt;
+	}
+}

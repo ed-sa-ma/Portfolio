@@ -1,0 +1,8 @@
+/// Applies outline styles uniformly for all button and button-like elements in the page.
+// @param {string} $color Outline color
+@mixin button-focus-outline($color) {
+	&:focus {
+		outline: 3px solid $color;
+		outline-offset: 2px;
+	}
+}
