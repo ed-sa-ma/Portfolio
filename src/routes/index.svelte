@@ -1,6 +1,10 @@
 <script context="module">
 	import { getMainPageProps } from '$lib/helpers.js';
 
+	// MAKE ALL FONT SIZES RELATIVE TO ROOT (REM)
+	// TEST SCROLL SNAP POINTS
+	// LOOK AT Clamp.js BEACUSE CSS LINE-CLAMP BREAKS IN SAFARI WHEN THERE ARE MULTIPLE PARAGRAPHS IN THE CLAMPED ELEMENTS.
+
 	export async function load({ fetch }) {
 		try {
 			let res = await fetch('/cms/content').then((r) => r.json());
@@ -40,7 +44,7 @@
 <Head />
 <Nav />
 
-<article id="top" class="wrapper style1">
+<article id="top" class="wrapper first style1">
 	<div class="container">
 		<Heading />
 	</div>
@@ -86,11 +90,15 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		min-height: calc(100vh - var(--nav-height));
+		min-height: 100vh;
 		min-width: 100vw;
 		padding: var(--vertical-padding) var(--horizontal-padding);
 		text-align: center;
-		scroll-margin-top: var(--vertical-padding);
+		scroll-margin-top: calc(var(--vertical-padding) + 8px);
+	}
+
+	.wrapper.first {
+		min-height: calc(100vh - var(--nav-height));
 	}
 
 	.container {
@@ -99,7 +107,7 @@
 
 	.style1 {
 		background-color: var(--main-red);
-		background-image: linear-gradient(var(--main-red), var(--main-red-dark));
+		background-image: linear-gradient(var(--main-red), var(--dark-red));
 		color: var(--main-white);
 	}
 

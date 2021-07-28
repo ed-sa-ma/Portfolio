@@ -15,4 +15,4 @@ function linkResolver(doc) {
 	return `/${doc.uid}`;
 }
 
-export { getApi, Prismic, apiEndpoint, accessToken, linkResolver };
+export { getApi, linkResolver };

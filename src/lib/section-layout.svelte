@@ -40,6 +40,7 @@
 	.note {
 		font-size: 1.25em;
 	}
+
 	.description {
 		margin-top: 0.8em;
 	}

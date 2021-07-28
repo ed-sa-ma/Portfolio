@@ -10,6 +10,7 @@
 
 	.grid-component {
 		--gap: 2em;
+
 		gap: var(--gap);
 		display: flex;
 		flex-wrap: wrap;

@@ -15,8 +15,7 @@
 		isDialogOpen = false;
 	}
 
-	function handleSubmit(event) {
-		let form = event.target;
+	function handleSubmit({ target: form }) {
 		let isValid = form.checkValidity();
 		formData = new FormData(form);
 
@@ -40,9 +39,7 @@
 		if (event.key === 'Enter') sendMessage();
 	}
 
-	function handleFirstFocus(event) {
-		let element = event.target;
-
+	function handleFirstFocus({ target: element }) {
 		element.classList.add('already-focused');
 	}
 </script>
@@ -121,8 +118,10 @@
 
 	// We don't want the red shadow for invalid by default. We wait until after the first focus.
 	:global(input.already-focused:not(:focus):invalid, textarea.already-focused:not(:focus):invalid) {
+		// We need :global() because otherwise Svelte thing the selector doesn't match and removes it.
+		// We need !important because Svelte system to scope styles gives higher specificty to scoped styles.
 		box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.05),
-			0px 1px 0px 0px rgba(255, 255, 255, 0.025), inset 0px 0px 2px 1px var(--main-red);
+			0px 1px 0px 0px rgba(255, 255, 255, 0.025), inset 0px 0px 2px 1px var(--main-red) !important;
 		outline: none;
 	}
 

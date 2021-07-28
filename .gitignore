@@ -7,9 +7,8 @@ node_modules
 
 build/
 
+# Local dev for Netlify 
 netlify_tokens.md
-
-# Local Netlify folder
 .netlify
 
 *_hidden.png
