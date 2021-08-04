@@ -1,10 +1,6 @@
 <script context="module">
 	import { getMainPageProps } from '$lib/helpers.js';
 
-	// MAKE ALL FONT SIZES RELATIVE TO ROOT (REM)
-	// TEST SCROLL SNAP POINTS
-	// LOOK AT Clamp.js BEACUSE CSS LINE-CLAMP BREAKS IN SAFARI WHEN THERE ARE MULTIPLE PARAGRAPHS IN THE CLAMPED ELEMENTS.
-
 	export async function load({ fetch }) {
 		try {
 			let res = await fetch('/cms/content').then((r) => r.json());
