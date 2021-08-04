@@ -20,6 +20,6 @@
 		border: 0;
 		border-top: 1px solid rgba(0, 0, 0, 0.35);
 		box-shadow: 0 1px 0 0 hsl(0deg 0% 100% / 10%);
-		margin-top: 2em;
+		margin-top: 2rem;
 	}
 </style>

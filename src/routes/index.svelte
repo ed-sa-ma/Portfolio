@@ -81,8 +81,8 @@
 	}
 
 	.wrapper {
-		--vertical-padding: 3em;
-		--horizontal-padding: 1em;
+		--vertical-padding: 3rem;
+		--horizontal-padding: 1rem;
 
 		align-items: center;
 		background-image: url('/images/granular_bg.png');
@@ -94,7 +94,7 @@
 		min-width: 100vw;
 		padding: var(--vertical-padding) var(--horizontal-padding);
 		text-align: center;
-		scroll-margin-top: calc(var(--vertical-padding) + 8px);
+		scroll-margin-top: calc(var(--vertical-padding));
 	}
 
 	.wrapper.first {
@@ -102,7 +102,7 @@
 	}
 
 	.container {
-		max-width: 1300px;
+		max-width: 81.25rem; // 1300px
 	}
 
 	.style1 {
@@ -134,11 +134,13 @@
 
 	@include for-tablet-portrait-up {
 		.wrapper {
-			--horizontal-padding: 2em;
+			--horizontal-padding: 2rem;
+			// For some reason the scroll takes us 8 pixels above the expected on no-mobile screens.
+			scroll-margin-top: calc(var(--vertical-padding) + 8px);
 		}
 
 		.wrapper:last-of-type {
-			padding-bottom: 5em;
+			padding-bottom: 5rem;
 		}
 
 		.reduced-bleed {

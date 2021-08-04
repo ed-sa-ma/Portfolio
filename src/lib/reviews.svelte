@@ -31,6 +31,6 @@
 
 <style>
 	.reviews-list > * + * {
-		margin-top: 1em;
+		margin-top: 1rem;
 	}
 </style>

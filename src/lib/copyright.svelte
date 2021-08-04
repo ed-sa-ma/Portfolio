@@ -14,13 +14,10 @@
 		justify-content: center;
 		flex-direction: column;
 		color: var(--main-grey);
-		margin-top: 1em;
+		margin-top: 1rem;
 		// In order to have a small vertical line separator using border-left when side-by-side.
 		line-height: 1;
-
-		> * + * {
-			margin-top: 0.8em;
-		}
+		gap: 0.8rem;
 	}
 
 	a {
@@ -30,12 +27,13 @@
 	@include for-tablet-portrait-up {
 		.copyright {
 			flex-direction: row;
-			margin-top: 2em;
+			margin-top: 2rem;
+			gap: 0;
 
+			// Simulate a vertical bar separating from the element to the left.
 			> * + * {
-				margin-top: 0;
-				margin-left: 1em;
-				padding-left: 1em;
+				margin-left: 1rem;
+				padding-left: 1rem;
 				border-left: 1px solid var(--main-grey);
 			}
 		}

@@ -51,12 +51,12 @@
 
 	.fit {
 		width: 60%;
-		max-width: 24em;
+		max-width: 24rem;
 		position: relative;
 	}
 
 	.text {
-		margin-top: 1em;
+		margin-top: 1rem;
 	}
 
 	img {
@@ -72,21 +72,21 @@
 	}
 
 	a {
-		margin-top: 1em;
+		margin-top: 1rem;
 	}
 
 	@include for-tablet-portrait-up {
 		.text {
-			margin-top: 2em;
+			margin-top: 2rem;
 		}
 
 		.description {
-			font-size: 1.5em;
+			font-size: 1.5rem;
 			line-height: 1.75em;
 		}
 
 		a {
-			margin-top: 2em;
+			margin-top: 2rem;
 		}
 	}
 
@@ -97,7 +97,7 @@
 
 		.text {
 			text-align: start;
-			margin-left: 2em;
+			margin-left: 2rem;
 			margin-top: 0;
 		}
 

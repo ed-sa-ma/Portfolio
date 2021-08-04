@@ -29,12 +29,12 @@
 
 	:global(ul.social-icons svg) {
 		position: relative;
-		height: 28px;
+		height: 1.75rem;
 		color: #2e2e2e;
 	}
 
 	.social {
-		margin-top: 2em;
+		margin-top: 2rem;
 	}
 
 	ul.social-icons {
@@ -43,11 +43,14 @@
 		margin: 0;
 
 		li {
-			margin: 0.3em;
+			margin: 0.3rem; // 4.8px
 			display: inline-block;
 		}
 
 		a {
+			--size: 3rem;
+			--border-radius: 0.5rem; // 8px
+
 			position: relative;
 			top: 0;
 
@@ -55,9 +58,9 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			width: 48px;
-			height: 48px;
-			border-radius: 7px;
+			width: var(--size);
+			height: var(--size);
+			border-radius: var(--border-radius);
 
 			&:before {
 				position: absolute;
@@ -67,14 +70,16 @@
 				transition: background-color 0.2s ease-in-out;
 				background-color: transparent;
 				display: block;
-				height: 48px;
-				width: 48px;
-				border-radius: 6px;
+				align-items: center;
+				width: 100%;
+				height: 100%;
+				// Without this px difference we see the background colors on the corners.
+				border-radius: calc(var(--border-radius) - 1px);
 			}
 
 			@media (hover: hover) {
 				&:hover {
-					top: -5px;
+					top: -0.3rem; // -4.8px
 
 					&:before {
 						background-color: transparent;

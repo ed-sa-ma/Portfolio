@@ -49,7 +49,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		padding: 2em 2em;
+		padding: 2rem;
 		text-align: center;
 		//Replicating style2 wrapper (see index.svelte)
 		background-color: #fafafa;
@@ -57,7 +57,7 @@
 	}
 
 	.actions {
-		margin-top: 1em;
+		margin-top: 1rem;
 	}
 
 	.actions,
@@ -68,21 +68,13 @@
 	.actions {
 		display: flex;
 		flex-direction: column;
-
-		& > button + button {
-			margin-top: 0.8em;
-		}
+		gap: 0.75rem;
 	}
 
 	@include for-tablet-portrait-up {
 		.actions {
 			flex-direction: row;
 			justify-content: center;
-
-			> button + button {
-				margin-top: 0;
-				margin-left: 0.8em;
-			}
 		}
 
 		.actions,

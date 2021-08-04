@@ -156,10 +156,10 @@
 		color: var(--main-white);
 		display: block;
 		font-family: inherit;
-		font-size: 1em;
+		font-size: 1rem;
 		font-weight: 300;
-		line-height: 1.85em;
-		padding: 0.75em;
+		line-height: 1.85rem;
+		padding: 0.75rem;
 		transition: background 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 		width: 100%;
 
@@ -182,7 +182,7 @@
 	}
 
 	textarea {
-		height: 15em;
+		height: 15rem;
 	}
 
 	label {
@@ -190,7 +190,7 @@
 		font-weight: 700;
 		display: block;
 		text-align: start;
-		margin: 0.8em 0 0.5em;
+		margin: 0.8rem 0 0.5rem;
 	}
 
 	.name-email {
@@ -202,22 +202,19 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		margin-top: 2em;
-
-		> button + button {
-			margin-top: 0.8em;
-		}
+		gap: 0.8rem;
+		margin-top: 2rem;
 	}
 
 	.error-message {
 		color: var(--main-red);
-		margin-top: 1em;
+		margin-top: 1rem;
 	}
 
 	@include for-tablet-portrait-up {
 		.name-email {
 			grid-template-columns: 1fr 1fr;
-			column-gap: 2em;
+			column-gap: 2rem;
 		}
 
 		// Re-ordering when the inputs are displayed side by side to have the labels over them.
@@ -227,11 +224,6 @@
 
 		.actions {
 			flex-direction: row;
-
-			> button + button {
-				margin-top: 0;
-				margin-left: 0.8em;
-			}
 		}
 	}
 </style>

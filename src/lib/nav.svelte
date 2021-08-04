@@ -48,9 +48,9 @@
 		font-weight: 600;
 		border-radius: 8px;
 		color: var(--main-white);
-		height: 2.5em;
-		line-height: 2.5em;
-		padding: 0 1.25em;
+		height: 2.5rem;
+		line-height: 2.5rem;
+		padding: 0 1.25rem;
 		transition: background-color 0.2s ease-in-out;
 		@include button-focus-outline(var(--main-white));
 
@@ -74,7 +74,7 @@
 	@include for-phone-only {
 		nav {
 			a {
-				padding: 0 0.75em;
+				padding: 0 0.75rem;
 				height: inherit;
 				line-height: inherit;
 				border-radius: 0;

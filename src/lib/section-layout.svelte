@@ -38,36 +38,36 @@
 
 	.description,
 	.note {
-		font-size: 1.25em;
+		font-size: 1.125rem;
 	}
 
 	.description {
-		margin-top: 0.8em;
+		margin-top: 1rem;
 	}
 
 	.note {
-		margin-top: 1em;
+		margin-top: 1rem;
 	}
 
 	.content {
-		margin-top: 1em;
+		margin-top: 1.25rem;
 	}
 
 	.button {
-		margin-top: 2em;
+		margin-top: 2rem;
 	}
 
 	@include for-tablet-portrait-up {
 		.description {
-			margin-top: 1em;
+			margin-top: 1.75rem;
 		}
 
 		.content {
-			margin-top: 2em;
+			margin-top: 2rem;
 		}
 
 		.note {
-			margin-top: 2em;
+			margin-top: 2rem;
 		}
 	}
 </style>

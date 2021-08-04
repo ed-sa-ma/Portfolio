@@ -27,8 +27,8 @@
 	}
 
 	.project-tile {
-		--vertical-padding: 1.5em;
-		--horizontal-padding: 1em;
+		--vertical-padding: 1.5rem;
+		--horizontal-padding: 1rem;
 
 		background: #fff;
 		box-shadow: inset 0 0 0 1px rgb(0 0 0 / 15%), 0 2px 3px 0 rgb(0 0 0 / 10%);
@@ -58,17 +58,17 @@
 	}
 
 	.description {
-		margin-top: 0.8em;
+		margin-top: 0.8rem;
 	}
 
 	@include for-tablet-portrait-up {
 		.project-tile {
-			--vertical-padding: 2em;
-			--horizontal-padding: 2em;
+			--vertical-padding: 2rem;
+			--horizontal-padding: 2rem;
 		}
 
 		.description {
-			margin-top: 1em;
+			margin-top: 1rem;
 		}
 	}
 </style>

@@ -9,7 +9,7 @@
 	}
 
 	.grid-component {
-		--gap: 2em;
+		--gap: 2rem;
 
 		gap: var(--gap);
 		display: flex;

@@ -22,34 +22,34 @@
 	:global(.skill-tile svg) {
 		fill: currentColor;
 		color: var(--main-red);
-		max-height: 6em;
+		max-height: 6rem;
 	}
 
 	.skill-tile {
 		background-color: var(--main-white);
 		box-shadow: inset 0 0 0 1px rgb(0 0 0 / 15%), 0 2px 3px 0 rgb(0 0 0 / 10%);
-		padding: 2em;
+		padding: 2rem;
 	}
 
 	.title {
-		margin-top: 1em;
+		margin-top: 1rem;
 	}
 
 	.description {
-		margin-top: 0.8em;
+		margin-top: 0.8rem;
 	}
 
 	@include for-tablet-portrait-up {
 		:global(.skill-tile svg) {
-			max-height: 7em;
+			max-height: 7rem;
 		}
 
 		.title {
-			margin-top: 2em;
+			margin-top: 2rem;
 		}
 
 		.description {
-			margin-top: 1em;
+			margin-top: 1rem;
 		}
 	}
 </style>

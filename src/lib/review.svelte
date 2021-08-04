@@ -47,7 +47,7 @@
 	.review {
 		background: #fff;
 		box-shadow: inset 0 0 0 1px rgb(0 0 0 / 15%), 0 2px 3px 0 rgb(0 0 0 / 10%);
-		padding: 2em 1.5em;
+		padding: 2rem 1.5rem;
 		text-align: start;
 	}
 
@@ -82,6 +82,6 @@
 
 	.expand-link {
 		display: inline-block;
-		margin-top: 0.8em;
+		margin-top: 0.8rem;
 	}
 </style>

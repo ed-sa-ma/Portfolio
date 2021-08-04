@@ -6,7 +6,7 @@
 
 <style lang="scss">
 	.loader {
-		--ball-size: 4px;
+		--ball-size: 0.25rem;
 
 		position: absolute;
 		inset: 0;
@@ -14,6 +14,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		gap: calc(var(--ball-size) * 3);
 	}
 
 	.ball {
@@ -39,9 +40,5 @@
 		&.third {
 			animation-delay: 0.6s;
 		}
-	}
-
-	.ball + .ball {
-		margin-left: calc(var(--ball-size) * 3);
 	}
 </style>
